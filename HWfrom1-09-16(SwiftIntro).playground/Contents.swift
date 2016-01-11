@@ -1,5 +1,4 @@
 //: 01-09 Saturday Homework - Instructor: Linus
-
 /*:
 
 Use the link here to get the questions.  Then code your solutions below.  If it does not require code, just write your answer in comments.
