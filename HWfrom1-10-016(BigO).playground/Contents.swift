@@ -26,29 +26,39 @@ Pixel **awesomeFilter(Pixel image[][], int width, int height) {
 }
 
 
+
+
 b) What is the time complexity of this method, expressed in big O notation? Assume the image is square, and both dimensions are ‘n’.
 
+O(n^2)
+
 c) My friend sends me an improved version of his algorithm, makeEvenMoreAwesome, that takes into account the pixels around the image. He says it’s O(n2) in the amount of pixels in the image. What is the new time complexity of the method?
+
 */
 
 /*2)If foo(xs) is a function with time complexity n (where n is the size of the input array), and bar(xs) is a function with time complexity n2, what is the time complexity of each of the following snippets of code or algorithms?
 
 
-a) for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) {
+a) for (int i = 0; i < n; i++) {    n
+    for (int j = 0; j < n; j++) {   n^2
         foo(xs);
     }
 }
-for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) {
+O(n^2)
+
+for (int i = 0; i < n; i++) { n
+    for (int j = 0; j < n; j++) { n^2
         bar(xs);
     }
 }
+O(n^2)
+
 for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
         // do cool stuff
     }
 }
+O(n^2)
 
 
 b) int frobnicate(ys, m) {
