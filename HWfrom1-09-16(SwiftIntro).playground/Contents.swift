@@ -38,7 +38,7 @@ findMissingNumber(5, arr: arrayOfNumbers)
 func hasDuplicates(firstList: [Int]) -> Bool {
     let set = Set(firstList)
     
-    return !(set.count == firstList.count)
+    return set.count != firstList.count
 }
 
 let arrayOfDuplicates = [1,5,3,6,2,2,5,7,8,244]
