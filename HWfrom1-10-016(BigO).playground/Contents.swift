@@ -185,7 +185,7 @@ The answer is: tree
 
 ### 4.
 
-#### 4a)
+#### 4)
 
 Write an algorithm using one of the methods from exercise 1 (your choice) to 
 calculate the factorial of a number n. What is the time complexity of your 
@@ -206,11 +206,54 @@ func factorial(num: Int) -> Int{
 }
 
 
-/*
+/*:
 
+#### 5)
+
+Write an Objective C or Swift function to multiply two numbers without using the * operator. 
+Use the grade school method of multiplying by doing repeated addition. 
+For instance, 5 * 8 = 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 = 40. 
+Find the big O of your function in terms of n and m (the two operands).
 
 
 */
+
+// I didn't account for negative numbers, decimals, or large numbers
+
+func multiplyTheseTwo(num1: Int, num2: Int) -> Int {
+    
+    let baseNum = num1
+    let multiplierNum = num2
+    var product = 0
+    
+    for (var i = 0; i < multiplierNum; i++){
+        product += baseNum
+        print(product)
+    }
+    
+    return product
+}
+
+
+/*:
+
+#### 6)
+
+Look up Russian Peasant Multiplication. It’s a faster way to multiply numbers, 
+especially on a binary computer (like yours!). Implement a new multiplication 
+function using this technique and find the big O of your method. If you have 
+trouble with implementing this, write a flow chart and find the big O based on that. 
+(But it’s more satisfying to implement it and run it)
+
+Tip: Run through the method by hand a few times to see how it works and verify to 
+yourself that it does. It’s a non-intuitive algorithm. This will hopefully also 
+make the time complexity more clear.
+
+
+*/
+
+
+
 
 
 
