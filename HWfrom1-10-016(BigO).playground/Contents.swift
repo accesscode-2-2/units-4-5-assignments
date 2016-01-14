@@ -249,18 +249,56 @@ Tip: Run through the method by hand a few times to see how it works and verify t
 yourself that it does. It’s a non-intuitive algorithm. This will hopefully also 
 make the time complexity more clear.
 
+Write each number at the head of a column.
+Double the number in the first column, and halve the number in the second column.
+If the number in the second column is odd, divide it by two and drop the remainder.
+If the number in the second column is even, cross out that entire row.
+Keep doubling, halving, and crossing out until the number in the second column is 1.
+Add up the remaining numbers in the first column. The total is the product of your original numbers.
+*/
+
+func russianPeasantMultiplication(var num1: Int, var num2: Int) -> Int {
+    
+    var product = 0
+    
+    if (num1 % 2 != 0){
+        product = product + num2
+    }
+    
+    while (num1 != 1){
+        num1 = num1 / 2
+        num2 = num2 * 2
+        
+        if (num1 % 2 != 0){
+            product = product + num2
+        }
+    }
+    
+    return product
+}
+
+/*:
+
+### 7.
+
+Using the technique from exercise 4, profile the built in sorting method in objective C 
+(use an NSMutableArray and google how to sort an array of numbers in objective C). 
+Graph the result. Use spreadsheet formulas to add graph lines for n, n2, and n*log(n). 
+(You’ll have to modify the factors to make them fit in the graph window and to be close 
+to the graph of method execution time). Show that the sort method best fits n * log(n).
 
 */
 
 
+let arr = Array((0..<10))
+arr.sort()
+let time = CFAbsoluteTimeGetCurrent()
 
+//: ### Various run times
+/*: ![Runtimes](n.png "runtimes") */
 
-
-
-
-
-
-
+//: ### NSArray Sorting Algorithms
+/*: ![Array](nsarray.png "arrays") */
 
 
 
