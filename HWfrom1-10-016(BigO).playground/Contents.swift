@@ -17,22 +17,23 @@ a) How long would my computer take to execute the following code if the input im
 
 
 Pixel **awesomeFilter(Pixel image[][], int width, int height) {
-    for (int i = 0; i < width; i++) {
-        for (int j = 0; j < height; j++) {
-            [image[i][j] makeMoreAwesome];
+    for (int i = 0; i < width; i++) {   //1000*3
+        for (int j = 0; j < height; j++) { //1000*2000*3
+            [image[i][j] makeMoreAwesome];  // 1000*2000*2+1000*2000*200+1000*2000*10
         }
     }
     return image;
 }
 
-
-
+430,003,000 picoseconds. O(n*m)  ( 215nm+3n) if it's n by m.
 
 b) What is the time complexity of this method, expressed in big O notation? Assume the image is square, and both dimensions are ‘n’.
 
 O(n^2)
 
 c) My friend sends me an improved version of his algorithm, makeEvenMoreAwesome, that takes into account the pixels around the image. He says it’s O(n2) in the amount of pixels in the image. What is the new time complexity of the method?
+
+O(n^4)
 
 */
 
