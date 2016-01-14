@@ -157,6 +157,8 @@ c) Tree - O(n) for search, insert, delete
             }
         }
 
+    print(factorial(4))
+
     // Time complexity O(n)
 
 /*
