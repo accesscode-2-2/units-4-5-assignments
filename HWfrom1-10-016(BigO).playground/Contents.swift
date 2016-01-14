@@ -75,9 +75,9 @@ Big O notation -> 0(n);
 
 /////2c)
 BOOL betterHasDuplicates(int xs[], int n) {
-for (int i = 0; i < n; i++) {
-for (int j = i; j < n; j++) {
-if (i != j && xs[i] == xs[j]) {
+for (int i = 0; i < n; i++) {      //n
+for (int j = i; j < n; j++) {      //n * n
+if (i != j && xs[i] == xs[j]) {    //n
 return YES;
 }
 }
@@ -85,6 +85,7 @@ return YES;
 return NO;
 }
 
+        n * n^2 * n = n ^4
 
 //MERGE SORT
 list1 = [Int]()
@@ -104,6 +105,9 @@ right.append(list2[j])
 }
 }
 
+
+        O(n log(n))
+
 */
 
 
@@ -111,7 +115,7 @@ right.append(list2[j])
 /*
 
 
-3)3)a. Tree
+3)3)a. Tree or Hash Table
 b. Stack
 c. Tree
 
@@ -152,7 +156,26 @@ func multiplyTheseTwo(num1: Int, num2: Int) -> Int {
 
 6)
 
-7)
+func russianPeasant(var left_num : Int, var right_num : Int) -> Int {
+var product = 0
+if(left_num % 2 != 0)
+{
+product += right_num
+}
+while(left_num > 1)
+{
+left_num /= 2
+right_num *= 2
+if( left_num % 2 != 0)
+{
+product += right_num
+}
+}
+return product
+}
+
+
+7)Don't really know how to do this. Will continue working on this
 
 
 */
