@@ -55,7 +55,8 @@ time complexity O(n)
 time complexity = O(n^4)
 
 7) Spreadsheet
-
+    
+    After profile data and graphing NSSorting algortihm, it looks to be quite close to a logarithmic time complexity, which means its fairly fast
 
 */
 
