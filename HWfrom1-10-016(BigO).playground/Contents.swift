@@ -6,9 +6,12 @@ import Foundation
 
 /*:
 ### 1.
-With my new top of the line XJ452 supercomputer, memory access takes 1 picosecond, math operations take 3 picoseconds, and storing data in memory takes 10 picoseconds. My friend wrote a filter that makes a pixel more awesome, and takes 200 picoseconds to run.
+With my new top of the line XJ452 supercomputer, memory access takes 1 picosecond, 
+math operations take 3 picoseconds, and storing data in memory takes 10 picoseconds. 
+My friend wrote a filter that makes a pixel more awesome, and takes 200 picoseconds to run.
 
-How long would my computer take to execute the following code if the input image is 1000px wide by 2000px tall? What if it’s n by m?
+How long would my computer take to execute the following code if the input image is 
+1000px wide by 2000px tall? What if it’s n by m?
 
 `Pixel **awesomeFilter(Pixel image[][], int width, int height) {
 for (int i = 0; i < width; i++) {
@@ -21,7 +24,9 @@ return image;
 
 What is the time complexity of this method, expressed in big O notation? Assume the image is square, and both dimensions are ‘n’.
 
-My friend sends me an improved version of his algorithm, makeEvenMoreAwesome, that takes into account the pixels around the image. He says it’s O(n^2) in the amount of pixels in the image. What is the new time complexity of the method?
+My friend sends me an improved version of his algorithm, makeEvenMoreAwesome, that takes 
+into account the pixels around the image. He says it’s O(n^2) in the amount of pixels 
+in the image. What is the new time complexity of the method?
 */
 
 /*:
@@ -34,6 +39,8 @@ My friend sends me an improved version of his algorithm, makeEvenMoreAwesome, th
 * [filter] 1000 * 2000 * 200
 * 430,003,000 picoseconds or 4.3 * 10^7
 
+The answer is: 4.3 x 10^7
+
 #### 1b)
 * [math] n * 3
 * [math] n * m * 3
@@ -43,11 +50,17 @@ My friend sends me an improved version of his algorithm, makeEvenMoreAwesome, th
 * (3n)+(3nm)+(2nm)+(10nm)+(200nm)
 * (3n)+(215nm)
 
+The answer is: 3n + 215nm
+
 #### 1c)
-* O(n^2)
+
+The answer is: O(n^2)
+
 
 #### 1d)
-* O(n^4)
+
+The answer is: O(n^4)
+
 */
 
 
@@ -55,7 +68,9 @@ My friend sends me an improved version of his algorithm, makeEvenMoreAwesome, th
 
 ### 2.
 
-If foo(xs) is a function with time complexity n (where n is the size of the input array), and bar(xs) is a function with time complexity n2, what is the time complexity of each of the following snippets of code or algorithms?
+If foo(xs) is a function with time complexity n (where n is the size of the input array), 
+and bar(xs) is a function with time complexity n2, what is the time complexity of 
+each of the following snippets of code or algorithms?
 
 #### 2a)
 
@@ -83,7 +98,7 @@ for (int j = 0; j < n; j++) { --n
 
 n * n = n^2
 
-The answer is O(n^4)
+The answer is: O(n^4)
 
 #### 2b)
 
@@ -97,38 +112,113 @@ frobnicate(xs, n);
 
 The answer is 0(n);
 
-Tip: Write down a table with n from 0 to 5 and trace through to find out how many times frobnicate is called with each value of n.
+Tip: Write down a table with n from 0 to 5 and trace through to find out how many times 
+frobnicate is called with each value of n.
+
+#### 2c)
+
+An algorithm that takes as its input a list of friends of length n, filters out duplicates 
+using a method similar to our hasDuplicates method, sorts the list using merge sort 
+(see bigocheatsheet.com), then prints each item to the screen.
+
+binary sort (hasDuplicates) + merge sort
+
+O(logn) + O(nlogn) = O(nlogn)
+
+The answer is: O(nlogn)
 
 
-An algorithm that takes as its input a list of friends of length n, filters out duplicates using a method similar to our hasDuplicates method, sorts the list using merge sort (see bigocheatsheet.com), then prints each item to the screen.
+#### 2d)
+
+An algorithm that searches the now-sorted list of friends for a specific friend (not including the time it takes to sort).
+
+O(1)
 
 */
 
-func mergeSortFwends<T: Comparable>(inout array: [T]){
-    if (array.count <= 1){
-        return
+/*:
+
+### 3.
+
+Look at the complexities for some common data structures at bigocheatsheet.com. 
+Pick a good data structure for each of the following scenarios (there are sometimes 
+multiple answers):
+
+#### 3a)
+
+You get a large dataset of points of interest from an API when your app first runs. 
+You build it once at the beginning, and then have to search it many times while 
+the user pans around a map.
+
+
+The answer is: graph or trees
+
+
+#### 3b)
+
+You get a small dataset of points of interest from an API every time the user 
+pans the map. You construct the data set many times and only render it once, 
+then you discard it and do another API search.
+
+The answer is: stack or hash
+
+Tip: Constructing a dataset of size n means you have to call the data structure’s 
+insert method n times. So if the data structure has an insert method that takes 
+O(n2), the time to build it all from scratch is O(n3).
+
+The answer is: stack or hash table
+
+
+#### 3c)
+
+You used a linked list for your music app’s playlist feature, but now when people 
+search their playlist, there’s a noticeable lag before loading results. Your 
+competitor’s app is buttery smooth when searching, even showing results as you type. 
+What data structure would allow you to more quickly search without compromising too 
+much on the speed of inserting and deleting tracks, even in the worst case?
+
+The answer is: tree
+
+*/
+
+/*:
+
+### 4.
+
+#### 4a)
+
+Write an algorithm using one of the methods from exercise 1 (your choice) to 
+calculate the factorial of a number n. What is the time complexity of your 
+method in terms of the input value?
+
+*/
+
+
+func factorial(num: Int) -> Int{
+    
+    if (num == 0){
+        return 1;
     }
     
-    // split array in half
-    var middle = array.count
-    middle = middle / 2
-    var right = [T]();
-    var left = [T]();
-    
-    for x in 0..<middle{
-        left.append(array[x])
-    }
-    
-    for y in middle..<array.count{
-        right.append(array[y])
+    else {
+        return (num * factorial(num - 1))
     }
 }
 
 
-/*:
-An algorithm that searches the now-sorted list of friends for a specific friend (not including the time it takes to sort).
+/*
+
 
 
 */
+
+
+
+
+
+
+
+
+
 
 
