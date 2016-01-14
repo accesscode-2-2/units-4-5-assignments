@@ -17,15 +17,15 @@ a) How long would my computer take to execute the following code if the input im
 
 
 Pixel **awesomeFilter(Pixel image[][], int width, int height) {
-    for (int i = 0; i < width; i++) {   //1000*3
-        for (int j = 0; j < height; j++) { //1000*2000*3
+    for (int i = 0; i < width; i++) {   //1000*5
+        for (int j = 0; j < height; j++) { //1000*2000*5
             [image[i][j] makeMoreAwesome];  // 1000*2000*2+1000*2000*200+1000*2000*10
         }
     }
     return image;
 }
 
-430,003,000 picoseconds. O(n*m)  ( 215nm+3n) if it's n by m.
+434,005,000 picoseconds. O(n*m)  ( 217nm+3n) if it's n by m.
 
 b) What is the time complexity of this method, expressed in big O notation? Assume the image is square, and both dimensions are ‘n’.
 
@@ -33,7 +33,7 @@ O(n^2)
 
 c) My friend sends me an improved version of his algorithm, makeEvenMoreAwesome, that takes into account the pixels around the image. He says it’s O(n2) in the amount of pixels in the image. What is the new time complexity of the method?
 
-O(n^4)
+O(n^2)
 
 */
 
@@ -42,17 +42,17 @@ O(n^4)
 
 a) for (int i = 0; i < n; i++) {    n
     for (int j = 0; j < n; j++) {   n^2
-        foo(xs);
+        foo(xs); n
     }
 }
-O(n^2)
+O(n^3)
 
 for (int i = 0; i < n; i++) { n
     for (int j = 0; j < n; j++) { n^2
         bar(xs);
     }
 }
-O(n^2)
+O(n^4)
 
 for (int i = 0; i < n; i++) {
     for (int j = 0; j < n; j++) {
@@ -70,13 +70,41 @@ b) int frobnicate(ys, m) {
 }
 frobnicate(xs, n);
 
+
+O(n!)
+
 Tip: Write down a table with n from 0 to 5 and trace through to find out how many times frobnicate is called with each value of n.
 
 
 c) An algorithm that takes as its input a list of friends of length n, filters out duplicates using a method similar to our hasDuplicates method, sorts the list using merge sort (see bigocheatsheet.com), then prints each item to the screen.
 
+BOOL betterHasDuplicates(int xs[], int n) {
+for (int i = 0; i < n; i++) {
+for (int j = i; j < n; j++) {
+if (i != j && xs[i] == xs[j]) {
+return YES;
+}
+}
+}
+return NO;
+}
+
+
+//merge sort: split each element into partitions of size 1
+recursively merge adjancent partitions
+for i = leftPartStartIndex to rightPartLastIndex inclusive
+if leftPartHeadValue <= rightPartHeadValue
+copy leftPartHeadValue
+else: copy rightPartHeadValue
+copy elements back to original array
+
+
+
+
 
 d) An algorithm that searches the now-sorted list of friends for a specific friend (not including the time it takes to sort).
+
+
 */
 
 /*3)Look at the complexities for some common data structures at bigocheatsheet.com. Pick a good data structure for each of the following scenarios (there are sometimes multiple answers):
