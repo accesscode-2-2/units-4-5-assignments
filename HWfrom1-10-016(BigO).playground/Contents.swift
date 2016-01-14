@@ -19,9 +19,9 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
 How long would my computer take to execute the following code if the input image is 1000px wide by 2000px tall?
     (10 + 3 + 3) * 1000
     (10 + 3 + 3) * 2000
-    2 + 200
+    2 + 200        * 2000
     1
-    = 16000+ 32000 + 202 + 1 = 48,203
+    = 16000+ 32000 + (202 + 1) * 2000 = 48,203
 
     What if it’s n by m?
     15n + 15m + 203
@@ -77,7 +77,32 @@ product(2, times: 3)
 
 /*
 
-6)
+6)Russian Peasant Multiplication 
+
+Write each number at the head of a column.
+Double the number in the first column, and halve the number in the second column.
+If the number in the second column is odd, divide it by two and drop the remainder.
+If the number in the second column is even, cross out that entire row.
+Keep doubling, halving, and crossing out until the number in the second column is 1.
+Add up the remaining numbers in the first column. The total is the product of your original numbers.
+*/
+
+func russain(n1: Int, n2: Int) -> Int{
+    if n1 == 1 {
+        return n2
+    }
+    
+    if n1 % 2 == 1{
+        return n2 + russain(n1 / 2, n2: 2 * n2)
+    }
+    
+    return russain(n1 / 2, n2: 2 * n2)
+
+}
+
+russain(4, n2: 2)
+
+/*
 
 7)
 
