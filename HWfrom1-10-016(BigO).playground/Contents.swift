@@ -232,7 +232,85 @@ Tip: Run through the method by hand a few times to see how it works and verify t
 
 Not sure how to do this one. I did check the graph in http://bigocheatsheet.com though, still no idea at all. :(
 
-*/
 
+//----Bubble sort----
+do
+swapped = false
+for i = 1 to indexOfLastUnsortedElement
+if leftElement > rightElement
+swap(leftElement, rightElement)
+swapped = true
+while swapped
+
+
+//----Select sort----
+repeat (numOfElements - 1) times
+set the first unsorted element as the minimum
+for each of the unsorted elements
+if element < currentMinimum
+set element as new minimum
+swap minimum with first unsorted position
+
+
+//----Insert sort----
+mark first element as sorted
+for each unsorted element
+'extract' the element
+for i = lastSortedIndex to 0
+if currentSortedElement > extractedElement
+move sorted element to the right by 1
+else: insert extracted element
+
+
+//----Merge sort----
+split each element into partitions of size 1
+recursively merge adjancent partitions
+for i = leftPartStartIndex to rightPartLastIndex inclusive
+if leftPartHeadValue <= rightPartHeadValue
+copy leftPartHeadValue
+else: copy rightPartHeadValue
+copy elements back to original array
+
+
+//----Quick sort----
+for each (unsorted) partition
+set first element as pivot
+storeIndex = pivotIndex + 1
+for i = pivotIndex + 1 to rightmostIndex
+if element[i] < element[pivot]
+swap(i, storeIndex); storeIndex++
+swap(pivot, storeIndex - 1)
+
+
+//----R-Quick sort----
+for each (unsorted) partition
+randomly select pivot, swap with first element
+storeIndex = pivotIndex + 1
+for i = pivotIndex + 1 to rightmostIndex
+if element[i] < element[pivot]
+swap(i, storeIndex); storeIndex++
+swap(pivot, storeIndex - 1)
+
+
+//----Count sort----
+create key (counting) array
+for each element in list
+increase the respective counter by 1
+for each counter, starting from smallest key
+while counter is non-zero
+restore element to list
+decrease counter by 1
+
+
+//----Radix sort----
+create 10 buckets (queues) for each digit (0 to 9)
+for each digit placing
+for each element in list
+move element into respective bucket
+for each bucket, starting from smallest digit
+while bucket is non-empty
+restore element to list
+
+*/
 
 
