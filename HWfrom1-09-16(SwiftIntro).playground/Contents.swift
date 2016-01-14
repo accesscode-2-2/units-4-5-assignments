@@ -13,7 +13,19 @@ var str = "Hello, playground"
 
 //1)
 
-
+func findNumber(n : Int, list : [Int]) -> Int
+    
+    {
+            let sum = n*(n+1)/2
+            var listSum = 0
+    
+            for i in list
+               {
+                    listSum += i
+                }
+        
+            return sum - listSum
+        }
 
 //2)
 
