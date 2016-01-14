@@ -29,10 +29,60 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
   c
 
 4)
+    func factorial(num : Int) -> Int {
 
+        if(num == 0 || num == 1)
+        {
+            return 1
+        }
+        return num * factorial(num - 1)
+    }
+    Time complexity O(n!)
 5)
 
+    func multiplication(num1 : Int, num2 : Int) -> Int {
+        var product = 0
+        for _ in 1...num2
+        {
+            product += num1
+        }
+        return product
+    }
+
+multiplication(8, num2: 5) = 40
+multiplication(6, num2: 4) = 24   
+
+Time Complexity O(num2) which is still constant so O(1)
+
+
+
 6)
+
+func russian_peasant_multiplication(var left_num : Int, var right_num : Int) -> Int {
+
+var product = 0
+if(left_num % 2 != 0)
+{
+product += right_num
+}
+while(left_num > 1)
+{
+left_num /= 2
+right_num *= 2
+
+if( left_num % 2 != 0)
+{
+product += right_num
+}
+}
+return product
+}
+
+russian_peasant_multiplication(36, right_num: 12)
+russian_peasant_multiplication(17, right_num: 13)
+russian_peasant_multiplication(2, right_num: 3)
+
+Time Complexity : 0(1)
 
 7)
 
