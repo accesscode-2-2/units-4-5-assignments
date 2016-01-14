@@ -29,7 +29,7 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
 
 4) func factorialAlgorithm (n: Double) -> Double {
    if n >= 1 {
-   return n * self.factorial(n - 1)
+   return n * self.factorialAlgorithm(n - 1)
    } else {
    return 0
 }
@@ -37,11 +37,19 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
 
 time complexity - O(log(n))
 
-5) 
+5) func repeatAddition (n: Int, m: Int){
 
-6)
+   if n >= 1 && m >= 1{
+   return n + n (self.count m - 1)
+}
+}
+time complexity O(n)
 
-7)
+6) flow chart - take n, double it. take m, halve it. Halve n until n == 1. Add n and m afetr that.
+
+time complexity = O(n^4)
+
+7) Spreadsheet
 
 
 */
