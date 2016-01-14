@@ -27,9 +27,17 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
   b)stack
   c) b-tree
 
-4) 
+4) func factorialAlgorithm (n: Double) -> Double {
+   if n >= 1 {
+   return n * self.factorial(n - 1)
+   } else {
+   return 0
+}
+}
 
-5)
+time complexity - O(log(n))
+
+5) 
 
 6)
 
