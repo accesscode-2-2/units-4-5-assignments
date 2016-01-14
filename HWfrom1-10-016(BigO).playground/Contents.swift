@@ -8,8 +8,11 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
 1)
 
     b) O(n^2)
+    c) O(n^4)
 
 2)
+    b) O(n)
+    c) O(n^2)
 
 3) 
     a) Binary Search Tree
