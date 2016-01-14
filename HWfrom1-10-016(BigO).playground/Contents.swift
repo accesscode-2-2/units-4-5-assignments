@@ -72,24 +72,18 @@ frobnicate(xs, n);
 
 Big O notation -> 0(n);
 
-*/
 
-
-
-
-/*
-3)
+/////2c)
 BOOL betterHasDuplicates(int xs[], int n) {
-    for (int i = 0; i < n; i++) {
-        for (int j = i; j < n; j++) {
-            if (i != j && xs[i] == xs[j]) {
-                return YES;
-            }
-        }
-    }
-    return NO;
+for (int i = 0; i < n; i++) {
+for (int j = i; j < n; j++) {
+if (i != j && xs[i] == xs[j]) {
+return YES;
 }
-
+}
+}
+return NO;
+}
 
 
 //MERGE SORT
@@ -112,9 +106,49 @@ right.append(list2[j])
 
 */
 
+
+
+/*
+
+
+3)3)a. Tree
+b. Stack
+c. Tree
+
+
+
+
 4)
 
+func factorial(num: Int) -> Int{
+    
+    if (num == 0){
+        return 1;
+    }
+        
+    else {
+        return (num * factorial(num - 1))
+    }
+}
+
+
+
+
 5)
+
+func multiplyTheseTwo(num1: Int, num2: Int) -> Int {
+    
+    let baseNum = num1
+    let multiplierNum = num2
+    var product = 0
+    
+    for (var i = 0; i < multiplierNum; i++){
+        product += baseNum
+        print(product)
+    }
+    
+    return product
+}
 
 6)
 
