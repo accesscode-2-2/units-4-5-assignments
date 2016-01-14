@@ -26,7 +26,7 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
 3)
   a. Hash Table
   b. A Stack, Singly-Linked List, Doubly Linked List, or a Hash Table
-  c
+  c. A Skip List, HashTable or BST
 
 4)
     func factorial(num : Int) -> Int {
@@ -78,9 +78,9 @@ product += right_num
 return product
 }
 
-russian_peasant_multiplication(36, right_num: 12)
-russian_peasant_multiplication(17, right_num: 13)
-russian_peasant_multiplication(2, right_num: 3)
+russian_peasant_multiplication(36, right_num: 12) = 432
+russian_peasant_multiplication(17, right_num: 13) = 221
+russian_peasant_multiplication(2, right_num: 3) = 6
 
 Time Complexity : 0(1)
 
