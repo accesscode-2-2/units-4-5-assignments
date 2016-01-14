@@ -142,20 +142,20 @@ o(n!)
 /*5)Write an Objective C or Swift function to multiply two numbers without using the * operator. Use the grade school method of multiplying by doing repeated addition. For instance, 5 * 8 = 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 = 40. Find the big O of your function in terms of n and m (the two operands).
 
 http://www.geeksforgeeks.org/multiply-two-numbers-without-using-multiply-division-bitwise-operators-and-no-loops/
-/* function to multiply two numbers x and y*/
-int multiply(int x, int y)
+/* function to multiply two numbers n and m*/
+int multiply(int n, int m)
 {
 /* 0  multiplied with anything gives 0 */
-if(y == 0)
+if(m == 0)
 return 0;
 
-/* Add x one by one */
-if(y > 0 )
-return (x + multiply(x, y-1));
+/* Add n one by one */
+if(m > 0 )
+return (n + multiply(n, m-1));
 
-/* the case where y is negative */
-if(y < 0 )
-return -multiply(x, -y);
+/* the case where m is negative */
+if(m < 0 )
+return -multiply(n, -m+1);
 }
 
 int main()
@@ -168,28 +168,69 @@ return 0;
 Read more:  http://www.noexit4u.com/2013/03/c-program-to-multiply-two-numbers.html
 
     {
-        int num1,num2,i,prod=0;
+        int n,m,i,prod=0;
         clrscr();
         printf("Enter 1st number: ");
         scanf("%d",&num1);
         printf("Enter 2nd number: ");
         scanf("%d",&num2);
-        for(i=1;i<=num2;i++)
+        for(i=1;i<=m;i++)
         {
-            prod+=num1;
+            prod+=n;
         }
-        printf("\n\n\nProduct of %d and %d is %d",num1,num2,prod);
+        printf("\n\n\nProduct of %d and %d is %d",n,m,prod);
         getch();
 }
+
+O(m)
+
 */
 
 /*6)Look up Russian Peasant Multiplication. It’s a faster way to multiply numbers, especially on a binary computer (like yours!). Implement a new multiplication function using this technique and find the big O of your method. If you have trouble with implementing this, write a flow chart and find the big O based on that. (But it’s more satisfying to implement it and run it)
+
+// an Example below: http://www.cut-the-knot.org/Curriculum/Algebra/PeasantMultiplication.shtml
+This is true in general: if tasked with applying the algorithm to finding the product of two numbers a and b, make the smaller number first, the larger one second.
+
+Now, let's see why the algorithm works. Since halving and doubling play such an important role in the algorithm, it should not come as a great surprise that its real foundation lies in the binary system. To obtain the binary representation of a number, the number is to be repeatedly divided by two, the remainders recorded and then written in the reverse order. Check now the "Show binary" box:
+
+
+We see two additional columns: the first indicates the step (and a power of 2), the second contains the binary digits of 85 written from the bottom upwards:
+
+85 = 10101012,
+which essentially means that
+
+
+85	= 10101012
+= 1·26 + 0·25 + 1·24 + 0·23 + 1·22 + 0·21 + 1·20
+= 64 + 16 + 4 + 1.
+Note that a binary digit is the remainder of division by 2: it is 1 for odd numbers and 0 for even numbers. Which bring forth the connection between the binary digits of the first multiplicand, 85 in our case, and the parity of the number in the column beneath it. The numbers are odd exactly when the remainder that appears to their left is 1. This makes the algorithm tick:
+
+
+85×18	= (64 + 16 + 4 + 1)×18
+= 1152 + 288 + 72 + 18
+= 1530.
+For the product 18×85 we get:
+
+
+18	= 100102
+= 1·24 + 0·23 + 0·22 + 1·21 + 0·20
+= 16 + 2.
+and subsequently
+
+
+18×85	= (16 + 2)×85
+= 1360 + 170
+= 1530.
+
 
 Tip: Run through the method by hand a few times to see how it works and verify to yourself that it does. It’s a non-intuitive algorithm. This will hopefully also make the time complexity more clear.
 
 */
 
 /*7)Using the technique from exercise 4, profile the built in sorting method in objective C (use an NSMutableArray and google how to sort an array of numbers in objective C). Graph the result. Use spreadsheet formulas to add graph lines for n, n2, and n*log(n). (You’ll have to modify the factors to make them fit in the graph window and to be close to the graph of method execution time). Show that the sort method best fits n * log(n).
+
+
+Not sure how to do this one. I did check the graph in http://bigocheatsheet.com though, still no idea at all. :(
 
 */
 
