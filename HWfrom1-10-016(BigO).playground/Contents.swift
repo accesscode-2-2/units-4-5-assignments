@@ -21,9 +21,12 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
 2)a. O(n^3) + O(n^4) + O(n^2) = O(n^4)
   b. frobnicate(xs, n) = xs[n] + xs[n-1] + xs[n-2] + ... + xs[1] + 0, so for n we make n+1 calls to frobnicate so it's 0(n)
 
-  c. O(n) + O(nlog n) + O(n) = O(nlog n)
+  c. O(n^2) + O(nlog n) + O(n) = O(n^2)
   d. O(log n)
 3)
+  a. Hash Table
+  b. A Stack, Singly-Linked List, Doubly Linked List, or a Hash Table
+  c
 
 4)
 
