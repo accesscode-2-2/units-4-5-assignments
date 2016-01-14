@@ -37,7 +37,7 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
         }
         return num * factorial(num - 1)
     }
-    Time complexity O(n!)
+    Time complexity O(n)
 5)
 
     func multiplication(num1 : Int, num2 : Int) -> Int {
