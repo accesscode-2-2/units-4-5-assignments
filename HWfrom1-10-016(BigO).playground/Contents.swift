@@ -43,6 +43,11 @@ time complexity - O(log(n))
    return n + n (self.count m - 1)
 }
 }
+
+func addition (int:n, int:m)
+
+additive recursion -> add (m,n) = add (m, n-1) +1
+
 time complexity O(n)
 
 6) flow chart - take n, double it. take m, halve it. Halve n until n == 1. Add n and m afetr that.
