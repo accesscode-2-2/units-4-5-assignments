@@ -160,11 +160,36 @@ Answer: Tree
 
 // answer:
 
+let userNames = ["cheekymonkey56", "007brenda", "hippydude"]
+
+if userNames.contains("geniushacker202") {
+    print("ACCESS GRANTED")
+}
+else {
+    print("INVALID USERNAME...")
+}
+
+// so: the Big O run time is O(N) because the run time corresponds to userNames.count
+
 /*
 5) Write an Objective C or Swift function to multiply two numbers without using the * operator. Use the grade school method of multiplying by doing repeated addition. For instance, 5 * 8 = 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 = 40. Find the big O of your function in terms of n and m (the two operands).
 */
 
 // answer: 
+
+func multiplyTwoNumbers(num1: Int, num2: Int) -> Int {
+    var product = 0
+    
+    for _ in 1...num2 { // loop through 1 through num2
+        product += num1 // each time add num1 to the product
+    }
+    return product
+}
+
+print(multiplyTwoNumbers(3, num2: 4)) // test it
+
+// BIG O = O(N) growth is linear
+
 
 /*
 6) Look up Russian Peasant Multiplication. It’s a faster way to multiply numbers, especially on a binary computer (like yours!). Implement a new multiplication function using this technique and find the big O of your method. If you have trouble with implementing this, write a flow chart and find the big O based on that. (But it’s more satisfying to implement it and run it)
@@ -174,11 +199,49 @@ Tip: Run through the method by hand a few times to see how it works and verify t
 
 // answer:
 
+// Steps:
+// track two numbers in arrays
+// double the number in the first array
+// halve the number in the second array
+// if second number is even, remove it from both arrays
+// continue doubling and halfing until the number in the second column is 1
+// add up the remaining numbers in the first array, this is the product to return
+
+func peasantMultiplication(firstNumber: Int, secondNumber: Int) -> Int {
+    
+    var firstArray = [Int](arrayLiteral: firstNumber * 2)
+    var secondArray = [Int](arrayLiteral: secondNumber / 2)
+    var sum: Int = 0
+    
+    while secondArray[0] != 1 {
+        
+        if secondArray[0] % 2 == 0 {
+            print("this number is even!")
+            firstArray.removeAtIndex(0)
+            secondArray.removeAtIndex(0)
+        }
+        else {
+//            firstArray = firstArray.append(firstArray[0] * 2)
+//            secondArray =
+        }
+        
+    }
+    
+    return 0
+
+}
+
+// I need to do more work on this, Integers in Swift aren't 100% accurate as they are rounded up. 
+//peasantMultiplication(12, secondNumber: 14)
+
+
+
 /*
 7) Using the technique from exercise 4, profile the built in sorting method in objective C (use an NSMutableArray and google how to sort an array of numbers in objective C). Graph the result. Use spreadsheet formulas to add graph lines for n, n2, and n*log(n). (You’ll have to modify the factors to make them fit in the graph window and to be close to the graph of method execution time). Show that the sort method best fits n * log(n).
 */
 
-// answer:
+// answer: I'm not sure how to graph this in a playground
+
 
 
 
