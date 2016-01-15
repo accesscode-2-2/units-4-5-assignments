@@ -205,7 +205,6 @@ func factorial(num: Int) -> Int{
     }
 }
 
-// O(n)
 
 /*:
 
@@ -291,9 +290,30 @@ to the graph of method execution time). Show that the sort method best fits n * 
 */
 
 
-let arr = Array((0..<10))
-arr.sort()
-let time = CFAbsoluteTimeGetCurrent()
+var runTime:Double = 0
+var sumTime: Double = 0
+func doThis100TimesToGetAverage(x: Int, arrSize: Int) -> Double {
+    let numRepeat = x
+    var count = 0
+    print("to repeat \(x)")
+    func sumItUp(index: Int){
+        print("index starts at \(index)")
+        if (index < x){
+            let start = CFAbsoluteTimeGetCurrent()
+            let arr = Array((0..<arrSize))
+            arr.sort()
+            let end = CFAbsoluteTimeGetCurrent()
+            runTime = end - start
+            sumTime += runTime
+            count = index + 1
+            sumItUp(count)
+        }
+    }
+    sumItUp(0)
+    return runTime;
+}
+doThis100TimesToGetAverage(100, arrSize: 10)
+
 
 //: ### Various run times
 /*: ![Runtimes](n.png "runtimes") */
