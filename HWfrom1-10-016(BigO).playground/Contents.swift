@@ -205,6 +205,7 @@ func factorial(num: Int) -> Int{
     }
 }
 
+// O(n)
 
 /*:
 
