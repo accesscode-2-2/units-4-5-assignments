@@ -18,19 +18,20 @@ time to run = 200 pico
 
 a) 241 picoseconds
 b) O(n^2)
-c) O(n^3)
+c) O(n^3)  correct answer 0(n^4) because makeEvenMoreAwesome gets done twice? O(n^2)(2)
 
 2)
-a) O(n^3), O(n^4) O(n^2)
+a) O(n^3), O(n^4)
 b) O(n)
-c) O(n^2 log(n))
-d) O(^2)
+c) O(n^2 log(n)) correct answer O(n log(n))
+d) O(n^2)
 
 
 3)
 a) binary search tree
-b) skip list
+b) skip list correct answer: use arrays
 c) maybe you could use two queues? one for storing searches as you type, and another for the searched music
+ answer to c: probably a tree
 
 4) I don't know the answer to this. What exercise 1? The one from Linus? Wording is confusing for me...
 
@@ -44,6 +45,8 @@ func multiplyOldSchool() {
 /* 
 6) 
 */
+
+// usually when you divide something by two, it's usually O(log^n)...
 
 func russianMath() {
     for (i = 0; i < 104; i++) {
