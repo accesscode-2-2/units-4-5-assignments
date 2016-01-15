@@ -17,18 +17,24 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
     Friends algo takes 200 picoseconds to run. 
     
 How long would my computer take to execute the following code if the input image is 1000px wide by 2000px tall?
-    (10 + 3 + 3) * 1000
-    (10 + 3 + 3) * 2000
-    2 + 200        * 2000
-    1
-    = 16000+ 32000 + (202 + 1) * 2000 = 48,203
+            10          3       3
+    for (int i = 0; i < width; i++) {
+            10          3       3
+    for (int j = 0; j < height; j++) {
+        1           200
+    [image[i][j] makeMoreAwesome];
+    }
+    }
+    return image;
+
+((10 + 3 + 3) * 1000) * ((10 + 3 + 3 + 201) * 2000) = 16000 * 488000 = 7.8* 10^9
 
     What if it’s n by m?
-    15n + 15m + 203
+    16n * 217m
 
-b) O(n)
+b) O(n^2)
 
-c) I'm not sure, O(n^2)
+c) O(n^4)
 
 
 2)
