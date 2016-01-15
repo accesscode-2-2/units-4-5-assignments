@@ -61,6 +61,7 @@ func factorial(n : Int) -> Int {
     return factorial(n-1)*n
 }
 
+
 /* time complexity: O(n) */
 
 
@@ -91,6 +92,7 @@ If the number in the second column is odd, divide it by two and drop the remaind
 If the number in the second column is even, cross out that entire row.
 Keep doubling, halving, and crossing out until the number in the second column is 1.
 Add up the remaining numbers in the first column. The total is the product of your original numbers.
+source: http://polynomialtimes.com/algorithms/decrease-and-conquer/russian-peasant-multiplication/
 */
 
 func russain(n1: Int, n2: Int) -> Int{
@@ -107,6 +109,12 @@ func russain(n1: Int, n2: Int) -> Int{
 }
 
 russain(4, n2: 2)
+
+/* O(log(n)
+
+any time you divide by two its likely a log(n) algorithm
+
+*/
 
 /*
 
