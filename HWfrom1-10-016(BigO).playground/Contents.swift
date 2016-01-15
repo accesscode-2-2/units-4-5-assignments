@@ -60,25 +60,30 @@ so: 19000 + 38000 + 202 + 1 = 57203 picoseconds?
 
 answer: I'm not 100% sure how to allocate numbers to each element. My guess is 57203 picoseconds.
 
+answer from class: run time is 200 picoseconds + additional operations. This question is a little bit vague.
+
 b) What is the time complexity of this method, expressed in big O notation? Assume the image is square, and both dimensions are ‘n’.
 
-answer: O(N^2) - Performance is proportional to the square of the size of the input data (N and M) and there are two loops (three loops would = O(N^3))
+answer: O(N^2) - Performance is proportional to the square of the size of the input data (N and M and N*M = N^2) and there are two loops (three loops would = O(N^3))
 
 c) My friend sends me an improved version of his algorithm, makeEvenMoreAwesome, that takes into account the pixels around the image. He says it’s O(n2) in the amount of pixels in the image. What is the new time complexity of the method?
 
 answer: O(N^2) If we are thinking about the worst case scenrio, this is equal to the existing run time.
 
+answer from class: O(N^2) * O(N^2) = O(N^4)
+
+(makeMoreAwesome * makeEvenMoreAwesome)
 
 2) If foo(xs) is a function with time complexity n (where n is the size of the input array), and bar(xs) is a function with time complexity n2, what is the time complexity of each of the following snippets of code or algorithms?
 
 a) for (int i = 0; i < n; i++) {
-for (int j = 0; j < n; j++) {
-foo(xs); // foo(xs) = O(N^2)
+for (int j = 0; j < n; j++) { // O(N^2)
+foo(xs);
     }
 }
 for (int i = 0; i < n; i++) {
-for (int j = 0; j < n; j++) {
-bar(xs); // bar(xs) = O(N^2)
+for (int j = 0; j < n; j++) { // O(N^2)
+bar(xs);
     }
 }
 for (int i = 0; i < n; i++) {
@@ -91,9 +96,9 @@ Notes:
 
 when performance is proportional to the square of the size of the input data (and for loops are involved) the run time is often O(N^2). Deeper nested loops result in higher exponents.
 
-O(N^2) + O(N^2) = O(N^4)?
+O(N^2) + O(N^2) = O(N^4)
 
-Answer: O(N^4)?
+Answer: O(N^4)
 
 b) Calculate the time complexity of the following:
 
@@ -109,20 +114,19 @@ Tip: Write down a table with n from 0 to 5 and trace through to find out how man
 
 Notes:
 
-when growth doubles (ie: frobnicate numbers) run time is O(2^n)
+number counts down so O(N)
 
-Answer: O(2^n)?
+Answer: O(N)
 
 c) An algorithm that takes as its input a list of friends of length n, filters out duplicates using a method similar to our hasDuplicates method, sorts the list using merge sort (see bigocheatsheet.com), then prints each item to the screen.
 
 Notes: 
 
 loop through to filter out duplicates = linear search = O(N)
-merge sort = O(N)
+merge sort = O(N log N)
+Print to screen = O(N)
 
-But: both of these actions would require a for loop (ie: 2 for loops = O(N^2))
-
-Answer: O(N^2)?
+Answer: O(N log N) (largest value only)
 
 d) An algorithm that searches the now-sorted list of friends for a specific friend (not including the time it takes to sort).
 
@@ -137,17 +141,17 @@ Answer: O(N)
 
 a) You get a large dataset of points of interest from an API when your app first runs. You build it once at the beginning, and then have to search it many times while the user pans around a map.
 
-Notes: This sounds like a tree or graph (less efficient for search)
+Notes: This sounds like a tree or hash table (less efficient for search)
 
-Answer: tree / graph
+Answer: tree / hash table
 
 b) You get a small dataset of points of interest from an API every time the user pans the map. You construct the data set many times and only render it once, then you discard it and do another API search.
 
 Tip: Constructing a dataset of size n means you have to call the data structure’s insert method n times. So if the data structure has an insert method that takes O(n2), the time to build it all from scratch is O(n3).
 
-Notes: you could save the points of interest in a hash table (dictionary)
+Notes: you could save the points of interest in a set or array.
 
-Answer: Hash table
+Answer: set or array
 
 c) You used a linked list for your music app’s playlist feature, but now when people search their playlist, there’s a noticeable lag before loading results. Your competitor’s app is buttery smooth when searching, even showing results as you type. What data structure would allow you to more quickly search without compromising too much on the speed of inserting and deleting tracks, even in the worst case?
 
@@ -231,16 +235,13 @@ func peasantMultiplication(firstNumber: Int, secondNumber: Int) -> Int {
 
 }
 
-// I need to do more work on this, Integers in Swift aren't 100% accurate as they are rounded up. 
-//peasantMultiplication(12, secondNumber: 14)
-
-
+// Answer from class: This is a O(log N) algorithm
 
 /*
 7) Using the technique from exercise 4, profile the built in sorting method in objective C (use an NSMutableArray and google how to sort an array of numbers in objective C). Graph the result. Use spreadsheet formulas to add graph lines for n, n2, and n*log(n). (You’ll have to modify the factors to make them fit in the graph window and to be close to the graph of method execution time). Show that the sort method best fits n * log(n).
 */
 
-// answer: I'm not sure how to graph this in a playground
+// answer: look at zovfrellia's github acct for example
 
 
 
