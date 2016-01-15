@@ -204,36 +204,32 @@ Tip: Run through the method by hand a few times to see how it works and verify t
 // answer:
 
 // Steps:
-// track two numbers in arrays
-// double the number in the first array
-// halve the number in the second array
-// if second number is even, remove it from both arrays
-// continue doubling and halfing until the number in the second column is 1
-// add up the remaining numbers in the first array, this is the product to return
+// pass two mutable integers into function
+// create a counter variable to hold the product
+// while n1 is greater than 1
+// double n1
+// divide n2 by half
+// if n1 is odd
+// add num2 to the existing product
+// if num1 = 1, break
+// return the product
 
-func peasantMultiplication(firstNumber: Int, secondNumber: Int) -> Int {
+func peasantMultiplication(var num1: Int, var num2: Int) -> Int {
     
-    var firstArray = [Int](arrayLiteral: firstNumber * 2)
-    var secondArray = [Int](arrayLiteral: secondNumber / 2)
-    var sum: Int = 0
+    var product = 0
     
-    while secondArray[0] != 1 {
+    while(num1 > 1) {
+        num2 = num2 * 2
+        num1 = num1 / 2
         
-        if secondArray[0] % 2 == 0 {
-            print("this number is even!")
-            firstArray.removeAtIndex(0)
-            secondArray.removeAtIndex(0)
+        if(num1 % 2 != 0) {
+            product += num2
         }
-        else {
-//            firstArray = firstArray.append(firstArray[0] * 2)
-//            secondArray =
-        }
-        
     }
-    
-    return 0
-
+return product
 }
+
+print(peasantMultiplication(14, num2: 36))
 
 // Answer from class: This is a O(log N) algorithm
 
