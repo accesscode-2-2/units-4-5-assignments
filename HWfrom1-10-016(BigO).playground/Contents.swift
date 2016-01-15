@@ -6,30 +6,35 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
 
 
 1)
-
+    a)
     b) O(n^2)
     c) O(n^4)
 
 2)
+    a) O(n^4)
     b) O(n)
-    c) O(n^2)
+    c) O(nLog(n))
+    d) O(nLog(n))
 
 3) 
     a) Binary Search Tree
-    b) Linked List
-    c) Graph
+    b) Array
+    c) Tree
 
 
 4)
 */
+
+
+//5)
 func multiply(num1: Int, num2: Int) {
     
     for var i = 0; i < num1; i++ {
         
     }
 }
-//5)
 
+//O(n)
 //6)
 
 //7)
