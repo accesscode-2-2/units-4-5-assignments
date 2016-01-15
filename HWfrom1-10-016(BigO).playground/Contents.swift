@@ -33,7 +33,7 @@ O(n^2)
 
 c) My friend sends me an improved version of his algorithm, makeEvenMoreAwesome, that takes into account the pixels around the image. He says it’s O(n2) in the amount of pixels in the image. What is the new time complexity of the method?
 
-O(n^2)
+O(n^4)   since makeEvenMoreAwesome is O(n^2)
 
 */
 
