@@ -51,7 +51,7 @@ Copy and paste your code:
     for _ in 0...firstLine{
     let numberofpeople = Int(readLine(stripNewline: true)!)!
 
-    print((numberofpeople*(numberofpeople-1))/2)
+    print(numberofpeople-1)
 
     }
 
@@ -60,7 +60,29 @@ What is the big O runtime of your code?: O(log(n))
 Question 3: https://www.hackerrank.com/challenges/connecting-towns
 
 Copy and paste your code:
+let firstLine = Int(readLine(stripNewline: true)!)!
+for _ in 0...firstLine{
+    let town = Int(readLine(stripNewline: true)!)!
+    var routes: [Int]
+    var ans
 
-What is the big O runtime of your code?:
+
+
+    for i in 0...town-1
+    { 
+        routes[i] = Int(readLine(stripNewline: true)!)!
+        
+        for j in 0...town-1
+        {   
+            ans *= routes[j];
+            ans = ans%1234567;
+        }
+        print(ans)
+
+    }
+}
+
+
+What is the big O runtime of your code?: O(n^2)
 
 */
