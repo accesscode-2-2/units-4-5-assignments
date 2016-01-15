@@ -82,7 +82,7 @@ russian_peasant_multiplication(36, right_num: 12) = 432
 russian_peasant_multiplication(17, right_num: 13) = 221
 russian_peasant_multiplication(2, right_num: 3) = 6
 
-Time Complexity : 0(1)
+Time Complexity : 0(log n)
 
 7)
 
