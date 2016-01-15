@@ -73,7 +73,7 @@ var str = "Hello, playground"
             }
         }
 
-    ANSWER: assuming (// do cool stuff) is no more complex than bar(xs), O(n^4)
+    ANSWER: O(n^4)
 
 
     b)
@@ -87,12 +87,12 @@ var str = "Hello, playground"
 
         Tip: Write down a table with n from 0 to 5 and trace through to find out how many times frobnicate is called with each value of n.
 
-        ANSWER:
+        ANSWER: O(n)
 
     
     c) An algorithm that takes as its input a list of friends of length n, filters out duplicates using a method similar to our hasDuplicates method, sorts the list using merge sort (see bigocheatsheet.com), then prints each item to the screen.
 
-        ANSWER:
+        ANSWER: O(n log(n)) [a bit better than O(n^2), worse than O(n)
 
 
     d) An algorithm that searches the now-sorted list of friends for a specific friend (not including the time it takes to sort).
@@ -107,23 +107,33 @@ var str = "Hello, playground"
 
             a) You get a large dataset of points of interest from an API when your app first runs. You build it once at the beginning, and then have to search it many times while the user pans around a map.
 
+                ANSWER: binary search tree
+
 
             b) You get a small dataset of points of interest from an API every time the user pans the map. You construct the data set many times and only render it once, then you discard it and do another API search.
 
                 Tip: Constructing a dataset of size n means you have to call the data structure’s insert method n times. So if the data structure has an insert method that takes O(n2), the time to build it all from scratch is O(n3).
 
+                ANSWER: array
+
 
             c) You used a linked list for your music app’s playlist feature, but now when people search their playlist, there’s a noticeable lag before loading results. Your competitor’s app is buttery smooth when searching, even showing results as you type. What data structure would allow you to more quickly search without compromising too much on the speed of inserting and deleting tracks, even in the worst case?
+
+                ANSWER: TREE
 
 
 ******************************************************************************************************************************
 
     4) Write an algorithm using one of the methods from exercise 1 (your choice) to calculate the factorial of a number n. What is the time complexity of your method in terms of the input value?
 
+        ANSWER:
+
 
 ******************************************************************************************************************************
 
     5) Write an Objective C or Swift function to multiply two numbers without using the * operator. Use the grade school method of multiplying by doing repeated addition. For instance, 5 * 8 = 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 = 40. Find the big O of your function in terms of n and m (the two operands).
+
+        ANSWER:
 
 
 ******************************************************************************************************************************
@@ -132,10 +142,14 @@ var str = "Hello, playground"
 
         Tip: Run through the method by hand a few times to see how it works and verify to yourself that it does. It’s a non-intuitive algorithm. This will hopefully also make the time complexity more clear.
 
+        ANSWER:
+
 
 *****************************************************************************************************************************
 
     7) Using the technique from exercise 4, profile the built in sorting method in objective C (use an NSMutableArray and google how to sort an array of numbers in objective C). Graph the result. Use spreadsheet formulas to add graph lines for n, n2, and n*log(n). (You’ll have to modify the factors to make them fit in the graph window and to be close to the graph of method execution time). Show that the sort method best fits n * log(n).
+
+        ANSWER:
 
 */
 
