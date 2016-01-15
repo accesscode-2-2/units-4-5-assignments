@@ -61,6 +61,7 @@ for (int i = 0; i < n; i++) {
 }
 O(n^2)
 
+Final: O(n^4)
 
 b) int frobnicate(ys, m) {
     if (m == 0) {
@@ -69,9 +70,9 @@ b) int frobnicate(ys, m) {
     return ys[m] + frobnicate(ys, m - 1);
 }
 frobnicate(xs, n);
+O(n)
 
-
-O(n!)
+//O(n!) X
 
 Tip: Write down a table with n from 0 to 5 and trace through to find out how many times frobnicate is called with each value of n.
 
@@ -103,7 +104,7 @@ O(n(logn))
 
 
 d) An algorithm that searches the now-sorted list of friends for a specific friend (not including the time it takes to sort).
-O(n)
+O(logn)  Binary search
 
 */
 
@@ -111,18 +112,22 @@ O(n)
 
 
 a) You get a large dataset of points of interest from an API when your app first runs. You build it once at the beginning, and then have to search it many times while the user pans around a map.
+
 Tree----A quad tree is a data structure comprising nodes which store a bucket of points and a bounding box. Any point which is contained within the node’s bounding box is added to its bucket. Once the bucket gets filled up, the node splits itself into four nodes, each with a bounding box corresponding to a quadrant of its parents bounding box. All points which would have gone into the parent’s bucket now go into one of its children’s buckets.
 
 https://robots.thoughtbot.com/how-to-handle-large-amounts-of-data-on-maps
 
 b) You get a small dataset of points of interest from an API every time the user pans the map. You construct the data set many times and only render it once, then you discard it and do another API search.
-Hash Table
+
+Set or Array
 
 Tip: Constructing a dataset of size n means you have to call the data structure’s insert method n times. So if the data structure has an insert method that takes O(n2), the time to build it all from scratch is O(n3).
 
 
 c) You used a linked list for your music app’s playlist feature, but now when people search their playlist, there’s a noticeable lag before loading results. Your competitor’s app is buttery smooth when searching, even showing results as you type. What data structure would allow you to more quickly search without compromising too much on the speed of inserting and deleting tracks, even in the worst case?
-Binary Tree
+
+Tree
+
 */
 
 /*4)Write an algorithm using one of the methods from exercise 1 (your choice) to calculate the factorial of a number n. What is the time complexity of your method in terms of the input value?
@@ -135,7 +140,7 @@ return N * factorial(N - 1)
 }
 }
 
-o(n!)
+O(n!)
 
 */
 
@@ -222,6 +227,7 @@ and subsequently
 = 1360 + 170
 = 1530.
 
+O(logn)
 
 Tip: Run through the method by hand a few times to see how it works and verify to yourself that it does. It’s a non-intuitive algorithm. This will hopefully also make the time complexity more clear.
 
