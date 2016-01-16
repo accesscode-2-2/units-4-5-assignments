@@ -11,7 +11,19 @@ Question 1: https://www.hackerrank.com/challenges/minimum-draws
 
 Copy and paste your code:
 
+
+
+
+
+
+
 What is the big O runtime of your code?:
+
+
+
+
+
+
 
 Question 2: https://www.hackerrank.com/challenges/handshake
 
