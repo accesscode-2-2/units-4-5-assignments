@@ -60,6 +60,10 @@ for (int i = 0; i < n; i++) {    // n
 
         n * n = n^2
 
+
+
+
+
 ///// 2b)
 int frobnicate(ys, m) {
     if (m == 0) {
