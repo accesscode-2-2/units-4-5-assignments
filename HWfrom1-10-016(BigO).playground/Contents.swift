@@ -18,7 +18,7 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
    b) O(n^2)
    c) 0(n^4)
 
-2) a)n^2 + n^4 + n^2 -> O(n^4)
+2) a)n^3 + n^4 + n^2 -> O(n^4)
    b)O(n)
    c)O(log(n))
    d)O(log(n))
@@ -52,7 +52,7 @@ time complexity O(n)
 
 6) flow chart - take n, double it. take m, halve it. Halve n until n == 1. Add n and m afetr that.
 
-time complexity = O(n^4)
+time complexity = O(log(n))
 
 7) Spreadsheet
     
