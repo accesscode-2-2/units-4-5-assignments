@@ -7,6 +7,7 @@ var str = "Hello, playground"
 
 /*
 
+
 Question 1: https://www.hackerrank.com/challenges/minimum-draws
 
 
@@ -58,26 +59,33 @@ Question 3: https://www.hackerrank.com/challenges/connecting-towns
 
 Copy and paste your code:
 
-let firstLine = Int(readLine(stripNewline: true)!)!
-for _ in 0...firstLine{
-    let town = Int(readLine(stripNewline: true)!)!
-    var routes: [Int]
-    var ans
 
-    for i in 0...town-1
-    { 
-        routes[i] = Int(readLine(stripNewline: true)!)!
-        
-        for j in 0...town-1
-        {   
-            ans *= routes[j];
-        }
-        print(ans)
+let firstLine = readLine(stripNewline: true)!
+let T = Int(firstLine)!
 
+for i in (0..<T) {
+
+    let firstTestLine = readLine(stripNewline: true)!
+
+    let N = Int(firstTestLine)!
+
+
+    let secondTestLine = readLine(stripNewline: true)!
+
+    let routes = secondTestLine.characters.split { $0 == " " }.map(String.init)
+
+    var product = 1
+
+    for i in 0..<routes.count{
+        product = product * Int(routes[i])!
     }
-}
 
+    print(product)
+
+
+}
 
 What is the big O runtime of your code?: O(n^2)
 
 */
+
