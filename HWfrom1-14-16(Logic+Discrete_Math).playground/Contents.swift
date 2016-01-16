@@ -25,12 +25,30 @@ What is the big O runtime of your code?: O(n)
 
 Question 2: https://www.hackerrank.com/challenges/handshake
 
+analagous to graph theory 
+
+METHOD 1:
+= C(n, 2)  // given a group of n people how many ways can i choose 2 people
+= n! / (2! * (n-2)!)
+= n! / 2 (n-2)!
+=   n (n-1) (n-2) .. 1
+    2 * (n-2)(n-3) .. 1
+= n (n-1)
+    2
+
+METHOD 2: first person shakes hands with (n-1) people ... last person shakes hands with no one
+(n-1) + (n-2) + ... + 1 + 0
+summation from k =1 to n is (n(n+1))/2
+from 1 to n-1 is ..
+= n (n-1)
+    2
+
 Copy and paste your code:
     let firstLine = Int(readLine(stripNewline: true)!)!
     for _ in 0...firstLine{
-    let numberofpeople = Int(readLine(stripNewline: true)!)!
+        let numberofpeople = Int(readLine(stripNewline: true)!)!
 
-    print(numberofpeople-1)
+        print((numberofpeople)(numberofpeople-1)/2)
 
     }
 
@@ -46,8 +64,6 @@ for _ in 0...firstLine{
     var routes: [Int]
     var ans
 
-
-
     for i in 0...town-1
     { 
         routes[i] = Int(readLine(stripNewline: true)!)!
@@ -55,7 +71,6 @@ for _ in 0...firstLine{
         for j in 0...town-1
         {   
             ans *= routes[j];
-            ans = ans%1234567;
         }
         print(ans)
 
