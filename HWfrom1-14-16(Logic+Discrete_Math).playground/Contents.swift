@@ -48,7 +48,18 @@ Question 3: https://www.hackerrank.com/challenges/connecting-towns
 Copy and paste your code:
 */
 
-
+func totalPath(towns:[Int]) -> Int {
+    if (towns.count > 0) {
+        var totalPath = 1
+        for n in towns {
+            totalPath *= n
+        }
+        return totalPath
+    } else {
+        return 0
+    }
+    
+}
 
 /*
 What is the big O runtime of your code?:
