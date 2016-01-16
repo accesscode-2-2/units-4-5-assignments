@@ -25,7 +25,7 @@ maxDraws(numOfPairs)
 /*
 What is the big O runtime of your code?:
 
-0(1)
+ 0(1)
 
 
 Question 2: https://www.hackerrank.com/challenges/handshake
@@ -67,6 +67,9 @@ handshakes(5)
 
 /*
 What is the big O runtime of your code?:
+
+0(n^2)
+
 
 Question 3: https://www.hackerrank.com/challenges/connecting-towns
 
