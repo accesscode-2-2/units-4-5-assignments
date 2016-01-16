@@ -31,15 +31,15 @@ let numberOfPeople = Int(readLine(stripNewline: true)!)!
 print(numberOfPeople*(numberOfPeople - 1)/2)
 }
 
-// n*(n-1)/2 which is simplified from C(n, 2) 
+// n*(n-1)/2 which is simplified from C(n, 2)
 
 What is the big O runtime of your code?: O(n^2)
 
 Question 3: https://www.hackerrank.com/challenges/connecting-towns
 
-Copy and paste your code:
+Copy and paste your code: Combination
 
-What is the big O runtime of your code?:
+What is the big O runtime of your code?: O(n^2)
 
 */
 
