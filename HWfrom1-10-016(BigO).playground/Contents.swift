@@ -126,14 +126,14 @@ var str = "Hello, playground"
 
     4) Write an algorithm using one of the methods from exercise 1 (your choice) to calculate the factorial of a number n. What is the time complexity of your method in terms of the input value?
 
-        ANSWER:
+        ANSWER: O(n)
 
 
 ******************************************************************************************************************************
 
     5) Write an Objective C or Swift function to multiply two numbers without using the * operator. Use the grade school method of multiplying by doing repeated addition. For instance, 5 * 8 = 5 + 5 + 5 + 5 + 5 + 5 + 5 + 5 = 40. Find the big O of your function in terms of n and m (the two operands).
 
-        ANSWER:
+        ANSWER: O(m)
 
 
 ******************************************************************************************************************************
@@ -142,7 +142,7 @@ var str = "Hello, playground"
 
         Tip: Run through the method by hand a few times to see how it works and verify to yourself that it does. It’s a non-intuitive algorithm. This will hopefully also make the time complexity more clear.
 
-        ANSWER:
+        ANSWER: O(log(n)) [every time you divide by two each pass it's a hint of O(long(n))
 
 
 *****************************************************************************************************************************
