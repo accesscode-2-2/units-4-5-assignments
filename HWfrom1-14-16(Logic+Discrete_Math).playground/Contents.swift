@@ -38,30 +38,29 @@ func userInput() -> Int {
 }
 
 
-// Draws
-
-let testNum : Int = Int(readLine()!)!        // asks for how many tests do you want done
-for i in 0..<testNum{                        // iterates through the number of tests inputted
+// #1
+let test1 : Int = userInput()     // asks for how many tests do you want done
+for i in 0..<test1{                        // iterates through the number of tests inputted
     var storedInput : Int = userInput()      // asks user for the # of pairs they have
     var maxDraws = storedInput + 1           // calculates the maximum draw
     print(maxDraws)                          // returns the maximum draw
 }
 
-// Handshakes 
+// The Big-O is O(n)
 
-let testNum : Int = userInput()          // asks for how many tests do you want done
-for i in 0..<testNum{                    // iterates through the number of tests inputted
+// #2
+let test2 : Int = userInput()          // asks for how many tests do you want done
+for i in 0..<test2{                    // iterates through the number of tests inputted
     var handshake : Int = userInput()
     handshake = (handshake * (handshake - 1)) / 2
     print(handshake)
 }
+// The Big-O is O(n)
 
 
-// Gandalf
-
+// #3
 var T = userInput()
 var total = 0
-
 while (T > 1){
     let N = userInput()
     total = 1
@@ -72,6 +71,10 @@ while (T > 1){
     }
     --T
 }
+// The Big-O is O(n^2)
+// Fundamental of counting principle
+// Multiply them altogether
+// Multiply the combinations
 
 
 
