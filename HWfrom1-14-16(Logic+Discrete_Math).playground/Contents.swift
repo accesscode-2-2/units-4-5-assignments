@@ -43,26 +43,24 @@ Question 3: https://www.hackerrank.com/challenges/connecting-towns
 
 Copy and paste your code:
 
-let T = Int(readLine()!)!
+let firstLine = readLine(stripNewLine: true)!
+let T = Int(firstLine)!
 
-for i in 0..<T {
+for i in (0..<T) {
+let firstTestLine = readLine(stripNewLine: true)!
+let N = Int(firstTestLine)!
+let secondTestLine = readLine(stripNewLine: true)!
+var secondTestLine = secondTestLine.characters.split(" ")
 
-let n = Int(readLine()!)!
-
-var route = 1
-
-//i = i
-
-for i in routes {
-
-route = route % 1234567
-
-
-route *= i
-
+var ans = 1
+for i in (0..<N - 1){
+var numberOfRoutes = Int(String(characterView))!
+ans *= numberOfRoutes
+ans %= 1234567
 }
-print(route)
+print(ans)
 }
+print()
 
 What is the big O runtime of your code?: O(n^2)
 
