@@ -14,7 +14,7 @@ var str = "Hello, playground"
 
     Pixel **awesomeFilter(Pixel image[][], int width, int height) {
 
-
+                        14 * width
         for (int i = 0; i < width; i++) {
 
 
@@ -35,7 +35,9 @@ var str = "Hello, playground"
         calculate that), it comes out to 442,029,010 picoseconds. If the number of pixels is n by m, assuming the same
         methodology, the formula (in picoseconds) is:
 
-            221,000mn + 29n + 10
+            229mn + 19n + 10
+            
+            O(mn)
 
     
 
@@ -61,17 +63,17 @@ var str = "Hello, playground"
             for (int j = 0; j < n; j++) {
                 foo(xs);
             }
-        }
+        } // n^3
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 bar(xs);
             }
-        }
+        } // n^4
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 // do cool stuff
             }
-        }
+        } // n^2
 
     ANSWER: O(n^4)
 
@@ -92,7 +94,7 @@ var str = "Hello, playground"
     
     c) An algorithm that takes as its input a list of friends of length n, filters out duplicates using a method similar to our hasDuplicates method, sorts the list using merge sort (see bigocheatsheet.com), then prints each item to the screen.
 
-        ANSWER: O(n log(n)) [a bit better than O(n^2), worse than O(n)
+        ANSWER: O(n^2) + O(n log(n)) + O(n) = O(n^2) 
 
 
     d) An algorithm that searches the now-sorted list of friends for a specific friend (not including the time it takes to sort).
