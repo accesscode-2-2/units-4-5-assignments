@@ -13,11 +13,12 @@ Question 1: https://www.hackerrank.com/challenges/minimum-draws
 
 Copy and paste your code:
 
-let firstLine = Int(readLine(stripNewline: true)!)!
+let firstLine = readLine(stripNewline: true)!
+let T = Int(firstLine)!
 
-for _ in 0...firstLine{
-let nextLine = Int(readLine(stripNewline: true)!)!
-print(nextLine+1)
+for _ in (0..<T){
+    let nextLine = Int(readLine(stripNewline: true)!)!
+    print(nextLine+1)
 }
 
 Jim would have to draw x + 1 socks in the worst case. where x is the number of pairs of socks
@@ -45,8 +46,9 @@ from 1 to n-1 is ..
     2
 
 Copy and paste your code:
-    let firstLine = Int(readLine(stripNewline: true)!)!
-    for _ in 0...firstLine{
+    let firstLine = readLine(stripNewline: true)!
+    let T = Int(firstLine)!
+    for _ in (0..<T){
         let numberofpeople = Int(readLine(stripNewline: true)!)!
 
         print((numberofpeople)(numberofpeople-1)/2)

@@ -110,7 +110,7 @@ func russain(n1: Int, n2: Int) -> Int{
 
 russain(4, n2: 2)
 
-/* O(log(n)
+/* O(log(n))
 
 any time you divide by two its likely a log(n) algorithm
 
@@ -118,8 +118,10 @@ any time you divide by two its likely a log(n) algorithm
 
 /*
 
-7)
+7)Using the technique from exercise 4, profile the built in sorting method in objective C (use an NSMutableArray and google how to sort an array of numbers in objective C). Graph the result. Use spreadsheet formulas to add graph lines for n, n2, and n*log(n). (You’ll have to modify the factors to make them fit in the graph window and to be close to the graph of method execution time). Show that the sort method best fits n * log(n).
 
+
+https://docs.google.com/spreadsheets/d/1CqF_l1DJCnWxTE3uEYb13lvi2KiqtKBONENwqYunqq4/edit?usp=sharing
 
 */
 
