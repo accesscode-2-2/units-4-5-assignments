@@ -94,7 +94,7 @@ var str = "Hello, playground"
     
     c) An algorithm that takes as its input a list of friends of length n, filters out duplicates using a method similar to our hasDuplicates method, sorts the list using merge sort (see bigocheatsheet.com), then prints each item to the screen.
 
-        ANSWER: O(n^2) + O(n log(n)) + O(n) = O(n^2) 
+        ANSWER: O(n^2) + O(n log(n)) + O(n) = O(n^2)
 
 
     d) An algorithm that searches the now-sorted list of friends for a specific friend (not including the time it takes to sort).
@@ -144,7 +144,7 @@ var str = "Hello, playground"
 
         Tip: Run through the method by hand a few times to see how it works and verify to yourself that it does. It’s a non-intuitive algorithm. This will hopefully also make the time complexity more clear.
 
-        ANSWER: O(log(n)) [every time you divide by two each pass it's a hint of O(long(n))
+        ANSWER: O(log(n)) [every time you divide by two each pass it's a hint of O(log(n))
 
 
 *****************************************************************************************************************************
