@@ -98,21 +98,23 @@ Using the technique from exercise 4, profile the built in sorting method in obje
 
 
 
-1) a. 
+1) a. 2,000,000
    b. O(n^2)
    c. O(n^4)
 
 2) a. cubic O(n^3)
       quadratic O(n^4)
       quadratic O(n^2)
-   b. constant
-   c.
+        O(n^4) answer
+   b. O(n)
+   c. O(n^2)
+   d. O(log n)
 
 3) a. tree
    b. hash table
    c. tree
 
-4)
+*4) what is the number? n -> list all the numbers from n counting down to 1 -> multiply each number, n * (n-1) * (n-2) *... * 1
 
 5) func multiplication(x: Int, y: Int) -> Int {
 
@@ -122,7 +124,7 @@ Using the technique from exercise 4, profile the built in sorting method in obje
 
     return x + multiplication(x, y: y-1)
 
-6)
+*6) O(log n)
 
 7)
 
