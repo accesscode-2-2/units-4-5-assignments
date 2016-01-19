@@ -17,15 +17,17 @@ a) How long would my computer take to execute the following code if the input im
 
 
 Pixel **awesomeFilter(Pixel image[][], int width, int height) {
-    for (int i = 0; i < width; i++) {   //1000*3
-        for (int j = 0; j < height; j++) { //1000*2000*3
-            [image[i][j] makeMoreAwesome];  // 1000*2000*2+1000*2000*200+1000*2000*10
+    for (int i = 0; i < width; i++) {   //10; 5*width; 14*width         //w * (
+        for (int j = 0; j < height; j++) { //10; 5*height; 14*height //h * (
+            [image[i][j] makeMoreAwesome];  // 200
         }
     }
     return image;
 }
 
-430,003,000 picoseconds. O(n*m)  ( 215nm+3n) if it's n by m.
+10+5w+14w+10w+5wh+14wh+200wh = 219wh +29w + 10         219nm + 29n + 10
+
+O(m * n)
 
 b) What is the time complexity of this method, expressed in big O notation? Assume the image is square, and both dimensions are ‘n’.
 
@@ -72,7 +74,6 @@ b) int frobnicate(ys, m) {
 frobnicate(xs, n);
 O(n)
 
-//O(n!) X
 
 Tip: Write down a table with n from 0 to 5 and trace through to find out how many times frobnicate is called with each value of n.
 
@@ -89,7 +90,7 @@ return YES;
 }
 return NO;
 }
-
+O(n^2)
 
 //merge sort: split each element into partitions of size 1
 recursively merge adjancent partitions
@@ -100,6 +101,11 @@ else: copy rightPartHeadValue
 copy elements back to original array
 
 O(n(logn))
+
+print each item 
+O(n)
+
+Final: O(n(logn))  = O(n^2) + O(n(logn)) + O(n)
 
 
 
@@ -227,7 +233,7 @@ and subsequently
 = 1360 + 170
 = 1530.
 
-O(logn)
+O(logn)  (as double input only add 1 step)
 
 Tip: Run through the method by hand a few times to see how it works and verify to yourself that it does. It’s a non-intuitive algorithm. This will hopefully also make the time complexity more clear.
 

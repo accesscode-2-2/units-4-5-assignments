@@ -9,6 +9,7 @@ var str = "Hello, playground"
 
 Question 1: https://www.hackerrank.com/challenges/minimum-draws
 
+<<<<<<< HEAD
 Copy and paste your code: 
 
 let firstLine = Int(readLine(stripNewline: true)!)!
@@ -20,11 +21,17 @@ print(totalPairOfSocks+1)
 //In its worst case scenario, n+1 socks (x) should Jim remove from his drawer until he finds a matching pair if there are n pairs socks in total.
 
 What is the big O runtime of your code?: O(n)
+=======
+Copy and paste your code:
+
+What is the big O runtime of your code?:
+>>>>>>> cde78394103ad73b556b455ae51bbdb81151cc7c
 
 Question 2: https://www.hackerrank.com/challenges/handshake
 
 Copy and paste your code:
 
+<<<<<<< HEAD
 let firstLine = Int(readLine(stripNewline: true)!)!
 for _ in 1...firstLine{
 let numberOfPeople = Int(readLine(stripNewline: true)!)!
@@ -141,6 +148,15 @@ print(ans)
 
 
 What is the big O runtime of your code?: O(n!)
+=======
+What is the big O runtime of your code?:
+
+Question 3: https://www.hackerrank.com/challenges/connecting-towns
+
+Copy and paste your code:
+
+What is the big O runtime of your code?:
+>>>>>>> cde78394103ad73b556b455ae51bbdb81151cc7c
 
 */
 
