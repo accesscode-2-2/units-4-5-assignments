@@ -65,17 +65,60 @@ handshakes(3)
 handshakes(5)
 
 
+
+//Second solution
+//Break down the  C(n,2) formula
+//so that factorials are not necessary
+
+func handshakes2(let n: Int) -> Int
+{
+    
+    return n * (n-1) / 2
+}
+
+handshakes2(3)
+handshakes2(5)
+
+
 /*
 What is the big O runtime of your code?:
+    
+    First solution
+    0(n^2)
 
-0(n^2)
+    Second solution
+    O(n^2)
 
 
 Question 3: https://www.hackerrank.com/challenges/connecting-towns
 
-Copy and paste your code:
+For x number of towns there are an array of [a, b, c, ...] numbers of routes between each pair of towns.
+We are given x and [a, b, c, ...]
+You can find the number of routes by multiplying each number of routes together
 
+Copy and paste your code:
+*/
+
+func totalRoutes(let routes: [Int]) -> Int
+{
+    var productOfRoutes = 1
+    
+    for i in 0..<routes.count {
+        
+        productOfRoutes *= routes[i]
+    }
+    
+    return productOfRoutes
+}
+
+
+let routes = [2, 1, 2, 3]
+totalRoutes(routes)
+
+/*
 What is the big O runtime of your code?:
+
+O(n)
 
 */
 
