@@ -169,6 +169,23 @@ print( (rotateMatrixBy90(sudokuBoard))) -> [[0, 2, 1, 0, 0, 0, 0, 9, 5], [8, 0, 
 
 3)
 
+func min(first : Int,second: Int)->Int {
+if first <= second {
+return first
+}
+else {
+return second
+}
+}
+
+func max(first : Int,second: Int)->Int {
+if first > second {
+return first
+}
+else {
+return second
+}
+}
 
 //Optimal Algorithm to sort four elements A,B,C,D
 func sort(unsorted: [Int]) ->[Int] {
