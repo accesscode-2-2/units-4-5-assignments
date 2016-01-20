@@ -122,11 +122,11 @@ c) An algorithm that takes as its input a list of friends of length n, filters o
 
 Notes: 
 
-loop through to filter out duplicates = linear search = O(N)
+loop through to filter out duplicates = binary search = O(N^2)
 merge sort = O(N log N)
 Print to screen = O(N)
 
-Answer: O(N log N) (largest value only)
+Answer: O(N^2) (largest value only)
 
 d) An algorithm that searches the now-sorted list of friends for a specific friend (not including the time it takes to sort).
 
@@ -231,13 +231,19 @@ return product
 
 print(peasantMultiplication(14, num2: 36))
 
-// Answer from class: This is a O(log N) algorithm
+// Answer from class: This is a O(log N) algorithm (if you can double the input and then add something it is log n)
 
 /*
 7) Using the technique from exercise 4, profile the built in sorting method in objective C (use an NSMutableArray and google how to sort an array of numbers in objective C). Graph the result. Use spreadsheet formulas to add graph lines for n, n2, and n*log(n). (You’ll have to modify the factors to make them fit in the graph window and to be close to the graph of method execution time). Show that the sort method best fits n * log(n).
 */
 
-// answer: look at zovfrellia's github acct for example
+// answer: look at zovfrellia's github acct for example of graphs
+// take time stamps for start and end times: 
+// NSDate *startTime = [NSDate date];
+// NSDate *endTime = [NSDate date];
+// use google sheets to graph numbers
+
+
 
 
 
