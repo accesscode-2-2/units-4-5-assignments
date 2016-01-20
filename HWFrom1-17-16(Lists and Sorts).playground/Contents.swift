@@ -170,5 +170,44 @@ print( (rotateMatrixBy90(sudokuBoard))) -> [[0, 2, 1, 0, 0, 0, 0, 9, 5], [8, 0, 
 3)
 
 
+//Optimal Algorithm to sort four elements A,B,C,D
+func sort(unsorted: [Int]) ->[Int] {
+
+let mid = unsorted.count/2
+var sorted = [Int]()
+
+let leftMin  = min(unsorted[0],unsorted[mid-1])
+let leftMax  = max(unsorted[0],unsorted[mid-1])
+
+let rightMin = min(unsorted[mid],unsorted[unsorted.count-1])
+let rightMax = max(unsorted[mid],unsorted[unsorted.count-1])
+
+let absoulteMin = min(leftMin, rightMin)
+let absoulteMax = max(leftMax,rightMax)
+
+if(leftMin == absoulteMin)
+{
+sorted.append(leftMin)
+sorted.append(rightMin)
+}
+else {
+sorted.append(rightMin)
+sorted.append(leftMin)
+}
+if(leftMax == absoulteMax){
+sorted.insert(rightMax, atIndex: mid)
+sorted.append(leftMax)
+}
+else {
+sorted.insert(leftMax, atIndex: mid)
+sorted.append(rightMax)
+}
+return sorted
+}
+sort([3,1,4,0]) -> [0,1,3,4]
+sort([2,2,2,2]) -> [2,2,2,2]
+sort([1,6,0,2]) -> [0,1,2,6]
+
+
 
 */
