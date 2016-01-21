@@ -239,31 +239,18 @@ let K = "K"
 let L = "L"
 var fourStringArr = [I, L, K, J]
 
-let M = "M"
-let N = "N"
-let O = "O"
-let P = "P"
+let M = "Monopoly"
+let N = "Neuron"
+let O = "Ocean"
+let P = "Polar Bear"
 var anotherFourStringArr = [P, O, M, N]
 
-func unicodeStringValue(str: String) ->Int
-{
-    
-    let singleCharString = str as NSString
-    let singleCharValue = Int(singleCharString.characterAtIndex(0))
-    print("The value of \(singleCharString) is \(singleCharValue)")
-    
-    return singleCharValue
-}
+var mArr = ["Monkey", "Mission", "Marmalade", "Mars"]
 
 
 func sortFourStrings(inout arr:[String]) ->[String]
 {
-    for str in arr {
-        
-        unicodeStringValue(str)
-    }
-    
-    let maxIndex = arr.count - 1
+       let maxIndex = arr.count - 1
     let midIndex = maxIndex / 2
     
     for _ in midIndex...maxIndex {
@@ -292,4 +279,5 @@ func sortFourStrings(inout arr:[String]) ->[String]
 
 sortFourStrings(&fourStringArr)
 sortFourStrings(&anotherFourStringArr)
+sortFourStrings(&mArr)
 
