@@ -132,14 +132,51 @@ Input: matrix:[[Int]]
 Output: matrix: [[Int]]
 
 Sample Input: [ [1][2][3][4],
-[5][6][7][8],
-[9][0][1][2],
-[3][4][5][6] ]
+                [5][6][7][8],
+                [9][0][1][2],
+                [3][4][5][6] ]
+
 Sample Output: [ [3][9][5][1],
-[4][0][6][2],
-[5][1][7][3],
-[6][2][8][4] ]
+                 [4][0][6][2],
+                 [5][1][7][3],
+                 [6][2][8][4] ]
 */
+
+var matrix =  [[1,2,3,4],
+               [5,6,7,8],
+               [9,0,1,2],
+               [3,4,5,6]]
+
+
+func rotateMatrix90Degrees(inout grid: [[Int]]) ->[[Int]]
+{
+    var tempGrid = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+    
+    for i in 0..<grid.count/4 {
+        
+        
+        for j in 0..<grid.count {
+            
+            let count = grid.count
+            
+            //let temp = grid[i][j]
+            tempGrid[j][i] = grid[count-1][j]
+            tempGrid[j][i+1] = grid[count-2][j]
+            tempGrid[j][i+2] = grid[count-3][j]
+            tempGrid[j][i+3] = grid[count-4][j]
+            
+        }
+        
+    }
+    print("TempGrid: \(tempGrid)")
+    print("grid: \(grid)")
+    
+    grid = tempGrid
+    
+    return grid
+}
+
+rotateMatrix90Degrees(&matrix)
 
 
 /*
