@@ -59,17 +59,19 @@ func handshakeCountFor(boardMembers: Int) -> Int{
 handshakeCountFor(5)
 
 func handshakeCountsForArray(arrayOfBoardMembers: [Int]) -> [Int]{
+    
     var handShakeCounts = [Int]()
     for boardMemberCount in arrayOfBoardMembers{
         handShakeCounts.append(handshakeCountFor(boardMemberCount))
     }
     return handShakeCounts
+    
 }
 
-handshakeCountsForArray([1,2,3,4,5])
+handshakeCountsForArray([1,2,3,4,5,20])
 
 //What is the big O runtime of your code?:
-// O(n^2) 
+// O( Σ ai)
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //Question 3: https://www.hackerrank.com/challenges/connecting-towns
