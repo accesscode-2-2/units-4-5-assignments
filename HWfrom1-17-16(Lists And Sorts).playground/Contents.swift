@@ -8,18 +8,16 @@ var str = "Hello, playground"
 Work on your solutions here.
 Link: https://docs.google.com/document/d/1XioaEqk6VqUPA-ccQhkqP3eAoDthxYyOM9vSPB7fDkg/edit#heading=h.uopysoy45zmw
 1) Given a partially filled in Sudoku board and a set of coordinates in that board pointing to an empty square, write a function that returns a list containing all numbers that the empty square could be.
-
-2)
-3)
+2) Rotate a matrix by ninety degrees
+3) Design an optimal algorithm for sorting four elements A, B, C, and D. By optimal, I mean one that sorts using the minimum number of comparisons. Hint: you may want to start by putting the first two items in order and the last two items in order... that takes two comparisons. How many more comparisons do you need to find the minimum element? The maximum? Once you’ve found the min and max, what if any additional comparisons are needed?
 */
 
-// Sudoku Rules: Each row, column and square (9 spaces each) needs to be filled out with the numbers 1-9, without repeating any numbers within the row, column or square.
-
-// 1) grab all numbers from the row and save them in an array
-// 2) grab all numbers from that column and save them in an array
-// 3) grab all numbers from square and save in an array
-// 4) loop through arrays, if number is not in 1...9, it is a potential solution to the puzzle!
-// 5) return those number(s)
+// 1) review the rules of Sudoku: Each row, column and square (9 spaces each) needs to be filled out with the numbers 1-9, without repeating any numbers within the row, column or square
+// 2) grab all numbers from the row and save them in an array
+// 3) grab all numbers from that column and save them in an array
+// 4) grab all numbers from square and save in an array
+// 5) loop through arrays, if number is not in 1...9, save it in an array
+// 6) return those numbers - these are your potential answers
 
 var sudokuBoard = [
     [5, 0, 8, 0, 7, 3, 1, 9, 0],
@@ -36,6 +34,7 @@ print(sudokuBoard[0][1]) // coordinates for 1, 2
 
 var rowNumbers = [Int]()
 var columnNumbers = [Int]()
+var boxNumbers = [Int]()
 
 func getRowNumbers(sudokuBoard: [[Int]], row: Int, column: Int) -> [Int] {
     for i in sudokuBoard[row] {
@@ -55,6 +54,46 @@ func getColumnNumbers(sudokuBoard: [[Int]], row: Int, column: Int) -> [Int] {
     return columnNumbers // should be [5, 9, 1, 2]
 }
 
+func getQuadrantNumbers(sudokuBoard: [[Int]], row: Int, column: Int) -> [Int] {
+// get box quadrant numbers
+// get numbers from within the selected quadrant
+
+    let point = (x: row, y: column)
+    
+    switch point {
+    case let q1 where (point.x >= 0 && point.x <= 2) && (point.y >= 0 && point.y <= 2):
+        print("\(q1) is in quadrant 1")
+        
+    case let q2 where (point.x >= 0 && point.x <= 2) && (point.y >= 3 && point.y <= 5):
+        print("\(q2) is in quadrant 2")
+        
+    case let q3 where (point.x >= 0 && point.x <= 2) && (point.y >= 6 && point.y <= 8):
+        print("\(q3) is in quadrant 3")
+        
+    case let q4 where (point.x >= 3 && point.x <= 5) && (point.y >= 0 && point.y <= 2):
+        print("\(q4) is in quadrant 4")
+        
+    case let q5 where (point.x >= 3 && point.x <= 5) && (point.y >= 3 && point.y <= 5):
+        print("\(q5) is in quadrant 5")
+        
+    case let q6 where (point.x >= 3 && point.x <= 5) && (point.y >= 6 && point.y <= 8):
+        print("\(q6) is in quadrant 6")
+        
+    case let q7 where (point.x >= 6 && point.x <= 8) && (point.y >= 0 && point.y <= 2):
+        print("\(q7) is in quadrant 7")
+        
+    case let q8 where (point.x >= 6 && point.x <= 8) && (point.y >= 3 && point.y <= 5):
+        print("\(q8) is in quadrant 8")
+        
+    case let q9 where (point.x >= 6 && point.x <= 8) && (point.y >= 6 && point.y <= 8):
+        print("\(q9) is in quadrant 9")
+        
+    default:
+        print("coordinates unknown.")
+    }
+    return boxNumbers
+}
+
 func returnPotentialNumbers(rowNumbers: [Int], columnNumbers: [Int]) -> Set<Int> {
     
     let allNumbers = rowNumbers + columnNumbers
@@ -65,9 +104,21 @@ func returnPotentialNumbers(rowNumbers: [Int], columnNumbers: [Int]) -> Set<Int>
     }
 
 getRowNumbers(sudokuBoard, row: 1, column: 0) // test it!
-getColumnNumbers(sudokuBoard, row: 1, column: 0) // test it!
-returnPotentialNumbers(rowNumbers, columnNumbers: columnNumbers)
+getColumnNumbers(sudokuBoard, row: 1, column: 0)
+getQuadrantNumbers(sudokuBoard, row: 6, column: 6)
 
+returnPotentialNumbers(rowNumbers, columnNumbers: columnNumbers) // <--- here are the potential numbers!!
+
+// 2.
+
+var input = [[1, 2, 3, 4],
+             [5, 6, 7, 8],
+             [9, 0, 1, 2],
+             [3, 4, 5, 6]]
+
+var output: [[Int]]
+
+// this is a 4X4 array
 
 
 
