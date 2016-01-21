@@ -150,24 +150,20 @@ var matrix =  [[1,2,3,4],
 
 func rotateMatrix90Degrees(inout grid: [[Int]]) ->[[Int]]
 {
-    var tempGrid = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
-    
-    for i in 0..<grid.count/4 {
+    let temp = Array(count: grid.count, repeatedValue: 0)
+    var tempGrid = Array(count: grid.count, repeatedValue:temp)
+    let count = grid.count
+
+    for i in 0..<count {
         
-        
-        for j in 0..<grid.count {
+        for j in 0..<count {
             
-            let count = grid.count
-            
-            //let temp = grid[i][j]
-            tempGrid[j][i] = grid[count-1][j]
-            tempGrid[j][i+1] = grid[count-2][j]
-            tempGrid[j][i+2] = grid[count-3][j]
-            tempGrid[j][i+3] = grid[count-4][j]
-            
+            tempGrid[i][j] = grid[count-1-j][i]
         }
         
+        print("j: \(i)")
     }
+
     print("TempGrid: \(tempGrid)")
     print("grid: \(grid)")
     
