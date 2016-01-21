@@ -89,7 +89,7 @@ handshakesSimplified(3)
 handshakesSimplified(5)
 
 //
-//What is the big O runtime of your code?:
+//What is the big O runtime of your code?: 0(1) 
 //
 //Question 3: https://www.hackerrank.com/challenges/connecting-towns
 //
