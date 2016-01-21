@@ -230,3 +230,66 @@ func sortFourElements(inout arr:[Int]) ->[Int]
 
 sortFourElements(&fourElementArr)
 sortFourElements(&anotherFourElementArr)
+
+
+//With single char strings
+let I = "I"
+let J = "J"
+let K = "K"
+let L = "L"
+var fourStringArr = [I, L, K, J]
+
+let M = "M"
+let N = "N"
+let O = "O"
+let P = "P"
+var anotherFourStringArr = [P, O, M, N]
+
+func unicodeStringValue(str: String) ->Int
+{
+    
+    let singleCharString = str as NSString
+    let singleCharValue = Int(singleCharString.characterAtIndex(0))
+    print("The value of \(singleCharString) is \(singleCharValue)")
+    
+    return singleCharValue
+}
+
+
+func sortFourStrings(inout arr:[String]) ->[String]
+{
+    for str in arr {
+        
+        unicodeStringValue(str)
+    }
+    
+    let maxIndex = arr.count - 1
+    let midIndex = maxIndex / 2
+    
+    for _ in midIndex...maxIndex {
+        
+        if arr[midIndex]<arr[midIndex-1] {
+            
+            (arr[midIndex], arr[midIndex-1])  = (arr[midIndex-1], arr[midIndex])
+        }
+        
+        if arr[maxIndex] < arr[maxIndex-1] {
+            
+            (arr[maxIndex-1], arr[maxIndex])  = (arr[maxIndex], arr[maxIndex-1])
+        }
+        
+        if arr[midIndex] > arr[maxIndex-1] {
+            
+            (arr[midIndex], arr[maxIndex-1])  = (arr[maxIndex-1], arr[midIndex])
+        }
+    }
+    
+    
+    
+    
+    return arr
+}
+
+sortFourStrings(&fourStringArr)
+sortFourStrings(&anotherFourStringArr)
+
