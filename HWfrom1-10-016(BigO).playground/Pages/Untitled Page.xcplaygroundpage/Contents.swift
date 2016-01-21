@@ -23,7 +23,7 @@ c) O(n^3)  correct answer 0(n^4) because makeEvenMoreAwesome gets done twice? O(
 2)
 a) O(n^3), O(n^4)
 b) O(n)
-c) O(n^2 log(n)) correct answer O(n log(n))
+c) O(n^2 log(n))
 d) O(n^2)
 
 
@@ -50,7 +50,7 @@ func multiplyOldSchool() {
 
 func russianMath() {
     for (i = 0; i < 104; i++) {
-        13 * 8
+        13 * 83
     }
 }
 // complexity should be O(n^2)
