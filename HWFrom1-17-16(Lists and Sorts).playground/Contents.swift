@@ -161,7 +161,6 @@ func rotateMatrix90Degrees(inout grid: [[Int]]) ->[[Int]]
             tempGrid[i][j] = grid[count-1-j][i]
         }
         
-        print("j: \(i)")
     }
 
     print("TempGrid: \(tempGrid)")
@@ -186,3 +185,5 @@ rotateMatrix90Degrees(&matrix)
     How many more comparisons do you need to find the minimum element? The maximum? 
     Once you’ve found the min and max, what if any additional comparisons are needed?
 */
+
+
