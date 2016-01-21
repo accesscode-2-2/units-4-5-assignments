@@ -104,10 +104,10 @@ a)  Algorithm 1 :
 
 b) O(n) because this is a straight recursion from m to m-1, m-2...
 
-c)  Filtering friends takes O(n!) time
+c)  Filtering friends takes O(n^2) time
     Sorting using merge sort, takes O(n log(n)) time
     Printing takes O(n) time
-    Time complexity = O(n!) + O(n log(n)) + O(n) = O(n^2)
+    Time complexity = O(n^2) + O(n log(n)) + O(n) = O(n^2)
 
 d) O(n)
 
@@ -204,7 +204,7 @@ Tip: Run through the method by hand a few times to see how it works and verify t
 
         print(russianPeasantMultiplication(24, m: 16))
 
-    // Time complexity : O(n)
+    // Time complexity : O(log n)
 
 
 
