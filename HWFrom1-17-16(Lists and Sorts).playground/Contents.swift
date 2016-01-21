@@ -122,8 +122,41 @@ let test = [[1,2,3,4],
 print(rotateMatrixByNinetyDegrees(test))
 
 /*
-3)
+3) */
 
+func sortFourElements(inout nums: [Int]) -> [Int] {
+    
+    var temp: Int
+    let indices = [[0,1], [2,3], [0,2], [1,3], [1,2]]
+    
+    for i in 0..<indices.count {
+        
+        if nums[indices[i][0]] > nums[indices[i][1]] {
+            
+            temp = nums[indices[i][0]]
+            nums[indices[i][0]] = nums[indices[i][1]]
+            nums[indices[i][1]] = temp
+        }
+    }
+    
+    return nums
+    
+}
 
+var nums  = [4, 3, 2, 1]
+var nums2 = [4, 3, 1, 2]
+var nums3 = [4, 2, 1, 3]
+var nums4 = [2, 4, 3, 1]
+var nums5 = [3, 4, 1, 2]
+var nums6 = [3, 4, 2, 1]
+var nums7 = [2, 3, 1, 4]
+var nums8 = [3, 2, 4, 1]
 
-*/
+print(sortFourElements(&nums))
+print(sortFourElements(&nums2))
+print(sortFourElements(&nums3))
+print(sortFourElements(&nums4))
+print(sortFourElements(&nums5))
+print(sortFourElements(&nums6))
+print(sortFourElements(&nums7))
+print(sortFourElements(&nums8))
