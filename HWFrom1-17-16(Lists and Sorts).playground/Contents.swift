@@ -7,6 +7,12 @@ var str = "Hello, playground"
 Work on your solutions here.
 Link: https://docs.google.com/document/d/1XioaEqk6VqUPA-ccQhkqP3eAoDthxYyOM9vSPB7fDkg/edit#heading=h.uopysoy45zmw
 1)
+//So this is my plan
+// Step 1: Print out the the suduko board as as squar with columns
+// Step 2: Make an array *possibleOutcomes
+// Step 3: Remove the numbers that appear on the x and y axises off possibleOutcomes as they appear
+            -The numbers remainin gwould be the possible outcome for that coordiante 
+
 2)
 3)
 */
@@ -39,10 +45,10 @@ for var i = 0; i <  sudokuBoard.count; i++ {
 
     }
     //print(sudokuBoard [4][4])
-    //print(line)
+    print(line)
 
 }
-print(sudokuBoard [4][4])
+//print(sudokuBoard [4][4])
 // print(sudokuBoard)
 //print("sudokuBoard equals \(sudokuBoard) at iteration \(i)")
 
