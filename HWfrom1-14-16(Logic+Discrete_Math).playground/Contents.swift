@@ -66,3 +66,14 @@ What is the big O runtime of your code?: O(n^2)
 
 */
 
+
+
+
+//************************************************//
+/* Unwrap optional 
+func user() -> Int {
+    let input = readLine()
+    let num = Int(input!)
+    return num!
+
+*/

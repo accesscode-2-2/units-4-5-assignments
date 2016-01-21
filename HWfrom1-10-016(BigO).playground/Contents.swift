@@ -115,7 +115,7 @@ right.append(list2[j])
 */
 
 
-
+//2d) nlogn
 /*
 
 
@@ -178,6 +178,9 @@ product += right_num
 return product
 }
 
+
+Big O: logn  <--- correct answer
+  ///when you double something and then add something, it's logn 
 
 7)Don't really know how to do this. Will continue working on this
 
