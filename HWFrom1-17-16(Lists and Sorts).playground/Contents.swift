@@ -187,3 +187,46 @@ rotateMatrix90Degrees(&matrix)
 */
 
 
+let A = 1
+let B = 2
+let C = 3
+let D = 4
+var fourElementArr = [D, A, C, B]
+
+let E = 1
+let F = 21
+let G = 49
+let H = 365
+var anotherFourElementArr = [H, G, E, F]
+
+func sortFourElements(inout arr:[Int]) ->[Int]
+{
+    let maxIndex = arr.count - 1
+    let midIndex = maxIndex / 2
+    
+    for _ in midIndex...maxIndex {
+        
+        if arr[midIndex]<arr[midIndex-1] {
+            
+            (arr[midIndex], arr[midIndex-1])  = (arr[midIndex-1], arr[midIndex])
+        }
+        
+        if arr[maxIndex] < arr[maxIndex-1] {
+            
+            (arr[maxIndex-1], arr[maxIndex])  = (arr[maxIndex], arr[maxIndex-1])
+        }
+        
+        if arr[midIndex] > arr[maxIndex-1] {
+            
+            (arr[midIndex], arr[maxIndex-1])  = (arr[maxIndex-1], arr[midIndex])
+        }
+    }
+    
+    
+    
+    
+    return arr
+}
+
+sortFourElements(&fourElementArr)
+sortFourElements(&anotherFourElementArr)
