@@ -82,6 +82,7 @@ func sudokuSpaceOptions(board: [[Int?]], x: Int, y: Int) -> [Int] {
 }
 
 var sudokuBoard: [[Int?]] = [
+    
     [5  , nil, 8  , nil, 7  , 3  , 1  , 9  , nil],
     [9  , nil, nil, 6  , nil, nil, 4  , nil, 8  ],
     [nil, nil, nil, 9  , nil, 8  , nil, 3  , 5  ],
@@ -96,10 +97,31 @@ print(sudokuSpaceOptions(sudokuBoard, x: 2, y: 6))
 print(sudokuSpaceOptions(sudokuBoard, x: 2, y: 0))
 
 /*
-2)
+2) */
 
+func rotateMatrixByNinetyDegrees(matrix: [[Int]]) -> [[Int]] {
+    
+    var rotated = [[Int]](count: matrix.count, repeatedValue: [Int](count: matrix[0].count, repeatedValue: 0))
+    
+    for i in 0..<matrix.count {
+        
+        for j in 0..<matrix[i].count {
 
+            rotated[j][matrix.count - 1 - i] = matrix[i][j]
+        }
+    }
+    
+    return rotated
+}
 
+let test = [[1,2,3,4],
+            [5,6,7,8],
+            [9,0,1,2],
+            [3,4,5,6]]
+
+print(rotateMatrixByNinetyDegrees(test))
+
+/*
 3)
 
 
