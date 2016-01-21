@@ -135,5 +135,5 @@ rotateMatrixNinetyDegree(matrix)
 // 3) Design an optimal algorithm for sorting four elements A, B, C, and D. By optimal, I mean one that sorts using the minimum number of comparisons. Hint: you may want to start by putting the first two items in order and the last two items in order... that takes two comparisons. How many more comparisons do you need to find the minimum element? The maximum? Once you’ve found the min and max, what if any additional comparisons are needed?
 
 
-
+// Once the the first two and the last two are in order then compare the 3rd element with the 2nd element. If the 3rd element is greater than 2nd element then four elements are in order, if not then switch 3rd and 2nd element. If additional comparision are needed then I would compare the first and the last element.
 
