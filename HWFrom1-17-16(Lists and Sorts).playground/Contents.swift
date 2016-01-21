@@ -21,12 +21,108 @@ Link: https://docs.google.com/document/d/1XioaEqk6VqUPA-ccQhkqP3eAoDthxYyOM9vSPB
     col: Int
 */
 
-func getValidNumbers(sudokuBoard:[[Int?]], row:Int, col:Int) -> [Int] {
+let sudokuBoard = [
+    [5, 0, 8, 0, 7, 3, 1, 9, 0],
+    [9, 0, 0, 6, 0, 0, 4, 0, 8],
+    [0, 0, 0, 9, 0, 8, 0, 3, 5],
+    [0, 7, 0, 0, 0, 0, 0, 6, 0],
+    [0, 0, 2, 0, 0, 0, 9, 0, 0],
+    [0, 1, 0, 0, 0, 0, 0, 8, 0],
+    [1, 9, 0, 3, 0, 6, 0, 0, 0],
+    [2, 0, 3, 0, 0, 7, 0, 0, 9],
+    [0, 8, 7, 1, 9, 0, 3, 0, 4]]
+
+
+func booleanArr (arr:[Int]) -> [Bool]{
     
+    //create an array of false bools to match the input array
     
-    return []
+    let booleanArr = Array(count: arr.count+1, repeatedValue: false)
+    
+    return booleanArr
+    
 }
 
+
+func possibleNumbers(arr:[Int], inout booleanArr: [Bool]) -> [Bool] {
+    
+    
+    //loop through the input arr and change
+    //the bool of the same index as the integer
+    //in the corresponding array
+    
+    for num in arr {
+        
+        //Change (the input num)index of the boolean arr
+        //to true
+        
+        booleanArr[num] = true
+    }
+    
+    
+    
+    
+    return booleanArr
+}
+
+func allPossibleNumbers(booleanArr: [Bool]) -> [Int]
+{
+    
+    var possibleNums = [Int]()
+    
+    //If the bool in our boolean arr is false
+    //add that index num to our availableNum arr
+    
+    for i in 1..<booleanArr.count {
+        
+        if booleanArr[i] == false {
+            
+            possibleNums.append(i)
+        }
+        
+    }
+    
+    return possibleNums
+}
+
+
+func getValidNumbers(sudokuBoard:[[Int]], row:Int, col:Int) -> [Int]
+{
+    
+    var validNums = [Int]()
+    
+    
+    // create row array
+    let rowArr = sudokuBoard[row]
+    print("row \(rowArr)")
+    
+    var columnArr: [Int] = []
+    var square: [Int] = []
+    
+    for i in 0..<rowArr.count{
+        
+        columnArr.append(sudokuBoard[i][col])
+        square.append(sudokuBoard[(col / 3) * 3 + i / 3][col * 3 % 9 + i % 3])
+    }
+    
+    print("column \(columnArr)")
+    print("squares \(square)")
+    
+    //for each array: row, column, square
+    //find possible numbers
+    //change the value of the possibleBools array
+    
+    var possibleBools = booleanArr(rowArr)
+    possibleBools = possibleNumbers(rowArr, booleanArr: &possibleBools)
+    possibleNumbers(columnArr, booleanArr: &possibleBools)
+    possibleNumbers(square, booleanArr: &possibleBools)
+    
+    validNums = allPossibleNumbers(possibleBools)
+    
+    return validNums
+}
+
+getValidNumbers(sudokuBoard, row: 4, col: 4)
 
 
 /*
