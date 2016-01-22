@@ -28,7 +28,65 @@ sample output: [1,3,4,5,6,8]
 
 
 func getValidNumbers(sudokuBoard:[[Int?]], row:Int, col:Int) -> [Int] {
+    var valid: Set<Int> = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     
+    for c in 0..<sudokuBoard[row].count {
+        if c == col {
+            continue
+        }
+        if let value = sudokuBoard[row][c] {
+            valid.remove(value)
+        }
+    }
+    
+    for r in 0..<sudokuBoard.count {
+        if r == row {
+            continue
+        }
+        if let value = sudokuBoard[r][col] {
+            valid.remove(value)
+        }
+    }
+    
+    let sqRow = row/3
+    let sqCol = col/3
+    
+    for r in sqRow..<(sqRow+3) {
+        for c in sqCol..<(sqCol + 3) {
+            
+        if r == row && c == col {
+            continue
+        }
+        if let value = sudokuBoard[r][col] {
+            valid.remove(value)
+        }
+    }
+    }
+    
+    // Turn the set into an array
+    return Array<Int>(valid)
+
+}
+    let sampleInput: [[Int?]] = [
+        [5, 0, 8, 0, 7, 3, 1, 9, 0],
+        [9, 0, 0, 6, 0, 0, 4, 0, 8],
+        [0, 0, 0, 9, 0, 8, 0, 3, 5],
+        [0, 7, 0, 0, 0, 0, 0, 6, 0],
+        [0, 0, 2, 0, 0, 0, 9, 0, 0],
+        [0, 1, 0, 0, 0, 0, 0, 8, 0],
+        [1, 9, 0, 3, 0, 6, 0, 0, 0],
+        [2, 0, 3, 0, 0, 7, 0, 0, 9],
+        [0, 8, 7, 1, 9, 0, 3, 0, 4]]
+    
+    getValidNumbers(sampleInput, row: 0, col: 1)
+    
+    
+    
+    //Method 1
+    // loop through the row, the column and the box, create a set.
+    // call .subtract to get the values
+    
+    //Method 2
     // loop through the row and create an array with existing integers on the row
     // loop through the column, add the integers on the column to the array if they are not there
     // loop through the box, add the integers on the box to the array if they are not there
@@ -45,11 +103,10 @@ func getValidNumbers(sudokuBoard:[[Int?]], row:Int, col:Int) -> [Int] {
 //        [1, 9, 0, 3, 0, 6, 0, 0, 0],
 //        [2, 0, 3, 0, 0, 7, 0, 0, 9],
 //        [0, 8, 7, 1, 9, 0, 3, 0, 4]]
-//    
+//
     
-    return [Int]()
     
-}
+
 
 
 
@@ -69,24 +126,86 @@ Sample Output: [ [3,9,5,1],
 [5,1,7,3],
 [6,2,8,4] ]
 
+
 */
-//The old matrix [arr1[0], arr1[1], arr1[2],...arr1[n],
-//                arr2[0], arr2[1], arr2[2],...arr2[n],
-//                arr3[0], arr3[1], arr3[2],...arr3[n],
+
+func rotate90(matrix: [[Int]]) -> [[Int]] {
+    let n = matrix.count
+    
+    var result: [[Int]] = []
+    
+    for _ in 0..<n {
+        var row: [Int] = []
+        for _ in 0..<n {
+            row.append(0)
+        }
+        result.append(row)
+    }
+    
+    for (r,row) in matrix.enumerate() {
+        for (c,val) in row.enumerate(){
+            result[c][n - r - 1] = val
+        }
+    }
+    return result
+}
+
+let rotateInput = [[1,2,3,4],
+[5,6,7,8],
+[9,0,1,2],
+[3,4,5,6]]
+
+rotate90(rotateInput)
+
+    // n * n matrix
+    
+    // 0, 0 -> 0, n - 1
+    // r, c -> r, n - c -1
+    
+    // 0, n - 1 -> n - 1, n - 1
+    // r, c -> n - r - 1, c
+    
+    // n - 1, n -1 -> n - 1, 0
+    // r, c -> n
+    
+
+//The old matrix [arr1[0], arr1[1], arr1[2],...arr1[n-1],
+//                arr2[0], arr2[1], arr2[2],...arr2[n-1],
+//                arr3[0], arr3[1], arr3[2],...arr3[n-1],
 //                ...
-//                arrN[0], arrN[1], arrN[2],...arrN[n]]
+//                arrN[0], arrN[1], arrN[2],...arrN[n-1]]
 
 //   The new matrix will be [arrN[0],...,arr3[0],arr2[0], arr1[0],
 //                           arrN[1],...,arr3[1],arr2[1], arr1[1],
 //                           arrN[2],...,arr3[2],arr2[2], arr1[2],
 //                           ...
-//                           arrN[n],...,arr3[n],arr2[n], arr1[n]]
+//                           arrN[n-1],...,arr3[n-1],arr2[n-1], arr1[n-1]]
 
 
 /*
 
 3)Design an optimal algorithm for sorting four elements A, B, C, and D. By optimal, I mean one that sorts using the minimum number of comparisons. Hint: you may want to start by putting the first two items in order and the last two items in order... that takes two comparisons. How many more comparisons do you need to find the minimum element? The maximum? Once you’ve found the min and max, what if any additional comparisons are needed?
 
+
+
+
+func mySort(values: [Int]) -> [Int] {
+    var left = values[0...1]
+    if left[0] > left[1] {
+        let t  = left[0]
+        left[0] = left[1]
+        left[1] = t
+    }
+    var right = values[2...4]
+    if right[0] > right[1] {
+        let t = right[0]
+        right[0] = right[1]
+        right[1] = t
+    }
+    
+    return
+    
+}
 */
 //put A and B in order, and put C and D in order
 //find the minAB and maxAB for A and B
