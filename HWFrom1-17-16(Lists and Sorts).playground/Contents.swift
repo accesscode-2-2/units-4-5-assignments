@@ -17,13 +17,13 @@ Link: https://docs.google.com/document/d/1XioaEqk6VqUPA-ccQhkqP3eAoDthxYyOM9vSPB
 // 1) Given a partially filled in Sudoku board and a set of coordinates in that board pointing to an empty square, write a function that returns a list containing all numbers that the empty square could be.
 
 
-func getAllColArrayIndex1(paramCol: Int, board: [[Int]]) -> [String: [Int]] {
+func getAllColArrayIndexRefactored(paramCol: Int, board: [[Int]]) -> [String: [Int]] {
     // grab all the index Array that are associated with col
     let col = paramCol-1
     var xArray = [Int]()
-    let numberOfColBox = Int(sqrt(Double(board[0].count)))
+    let numberOfColBox = Int(sqrt(Double(board.count)))
     var xNumber = (col)/numberOfColBox
-    for _ in 0..<numberOfColBox-1 {
+    for _ in 0..<numberOfColBox - 1 {
         xArray.append(xNumber)
         xNumber += numberOfColBox
         
@@ -46,25 +46,32 @@ func getAllColArrayIndex1(paramCol: Int, board: [[Int]]) -> [String: [Int]] {
 }
 
 
-func getAllRowArrayIndex1(paramRow: Int, board: [[Int]]) -> [String: [Int]] {
+func getAllRowArrayIndexRefactored(paramRow: Int, board: [[Int]]) -> [String: [Int]] {
     // grab all the index Array that are associated with row
     let row = paramRow - 1
     var yArray = [Int]()
-    var yNumber = (row)/3
-    yArray.append(yNumber)
-    yNumber += 1
-    yArray.append(yNumber)
-    yNumber += 1
-    yArray.append(yNumber)
+    let numberOfRowBox = Int(sqrt(Double(board.count)))
+    var yNumber = row / numberOfRowBox
+    
+    for _ in 0..<numberOfRowBox - 1 {
+        yArray.append(yNumber)
+        yNumber += 1
+    }
     
     // grall all the index number that are row Array
     var yArrayAtIndex = [Int]()
-    if(row % 3 == 0){
-        yArrayAtIndex.appendContentsOf([0,1,2])
-    } else if (row % 3 == 1) {
-        yArrayAtIndex.appendContentsOf([3,4,5])
+    var n = Int()
+    if(row % numberOfRowBox == 0){
+        n = 0
+    } else if (row % numberOfRowBox == 1) {
+        n = 3
     } else {
-        yArrayAtIndex.appendContentsOf([6,7,8])
+        n = 6
+    }
+    
+    for _ in 0..<numberOfRowBox - 1 {
+        yArrayAtIndex.append(n)
+        n += 1
     }
     
     return ["sudokuSmallBox":yArray, "indexNumber":yArrayAtIndex]
@@ -119,8 +126,9 @@ func getAllRowArrayIndex(paramRow: Int) -> [String: [Int]] {
 }
 
 func getValidNumbers(sudokuBoard: [[Int]], row: Int, col: Int) -> Set<Int>{
-    let colDictionary = getAllColArrayIndex1(col, board: sudokuBoard)
+    let colDictionary = getAllColArrayIndexRefactored(col, board: sudokuBoard)
 //    let colDictionary = getAllColArrayIndex(col)
+//    let rowDictionary = getAllRowArrayIndexRefactored(row, board: sudokuBoard)
     let rowDictionary = getAllRowArrayIndex(row)
     
     var colValue = [Int]()
