@@ -101,12 +101,14 @@ print(sudokuSpaceOptions(sudokuBoard, x: 2, y: 0))
 
 func rotateMatrixByNinetyDegrees(matrix: [[Int]]) -> [[Int]] {
     
+    // create an array of the same dimensions with all zeroes
     var rotated = [[Int]](count: matrix.count, repeatedValue: [Int](count: matrix[0].count, repeatedValue: 0))
     
     for i in 0..<matrix.count {
         
         for j in 0..<matrix[i].count {
 
+            // replace the default zeroes with the rotated values according to the formula
             rotated[j][matrix.count - 1 - i] = matrix[i][j]
         }
     }
@@ -119,7 +121,14 @@ let test = [[1,2,3,4],
             [9,0,1,2],
             [3,4,5,6]]
 
+let test2 = [[1,2,3,4,0],
+            [5,6,7,8,0],
+            [9,0,1,2,0],
+            [3,4,5,6,0],
+            [7,8,9,0,0]]
+
 print(rotateMatrixByNinetyDegrees(test))
+print(rotateMatrixByNinetyDegrees(test2))
 
 /*
 3) */
