@@ -81,7 +81,7 @@ let matrix =  [ [1, 2, 3, 4],
                 [5, 6, 7, 8],
                 [9, 0, 1, 2],
                 [3, 4, 5, 6] ]
-
+// m x n matrix
 // 0,0 goes to 0,3
 // 1,0 goes to 0,2
 // 2,0 goes to 0,1
@@ -97,7 +97,6 @@ func rotateMatrix(matrix:[[Int]])->[[Int]]{
         for col in 0..<columns{
             arr [ col ] [ rows - row - 1 ] = matrix [ row ] [ col ];
         }
-        
     }
     
     return arr
@@ -110,5 +109,26 @@ rotateMatrix(matrix)
 
 
 
-
 */
+
+func mySort(values: [Int]) -> [Int]{
+
+        var left = values[0...1]
+    
+    if left[0] > left [1]{
+        let t = left[0]
+        left[0] = left[1]
+        left[1] = t
+    }
+    
+    var right = values[2...4]
+    
+    if right[0] > right [1]{
+        let t = right[1]
+        right[0] = right[1]
+        right[1] = t
+    }
+    
+    
+    
+}
