@@ -90,7 +90,7 @@ func getValidNumbers(sudokuBoard:[[Int]], row: Int, col: Int) -> [Int] {
     
     
     let numbersUsedInRow = getNumbersInRow(sudokuBoard, row: row)
-    let numbersUsedInColumn = getNumbersInColumn(sudokuBoard, col: 3)
+    let numbersUsedInColumn = getNumbersInColumn(sudokuBoard, col: col)
     let numbersUsedInSquare = getNumbersInSquare(sudokuBoard, row: row, col: col)
     
     let numbersUsed = numbersUsedInRow.union(numbersUsedInColumn).union(numbersUsedInSquare)
@@ -125,7 +125,7 @@ func rotateArray90Degrees(arrayToRotate: [[Int]]) -> [[Int]] {
 rotateArray90Degrees(array)
 
 /*
-i = 0, j =0, newArray[0,4-1-0] = arrayToRotate[0][0]
+i = 0, j =0, newArray[0, 3] = arrayToRotate[0][0]
 i = 0, j = 1, newArray[1, 3] = arrayToRotate[0][1]
 i = 0, j = 2, newArray[2, 3] = arrayToRotate[0][2]
 i = 0, j = 3, newArray[3, 3] = arrayToRotate[0][3]
