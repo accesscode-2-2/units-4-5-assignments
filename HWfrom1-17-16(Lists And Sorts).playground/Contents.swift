@@ -179,7 +179,16 @@ getQuadrantNumbers(sudokuBoard, row: 1, column: 4) // test it!
 
 // HOMEWORK REVIEW NOTES:
 
-
+let sampleInput: [[Int?]] =
+[[5,0,8,9,0,0,0,0,0],
+    [0,7,3,6,0,0,9,0,8],
+    [1,9,0,4,0,8,0,3,5],
+    [0,7,0,0,0,2,0,1,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,6,0,9,0,0,0,8,0],
+    [1,9,0,2,0,3,0,8,7],
+    [3,0,6,0,0,7,1,9,0],
+    [0,0,0,0,0,9,3,0,4]]
 
 func getValidNumbers(sudokuBoard:[[Int?]], row:Int, col:Int) -> [Int] {
     var valid: Set<Int> = [1, 2, 3, 4, 5, 6, 7, 8, 9]
