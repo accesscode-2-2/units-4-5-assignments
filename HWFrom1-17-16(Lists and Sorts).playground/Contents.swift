@@ -16,6 +16,46 @@ Link: https://docs.google.com/document/d/1XioaEqk6VqUPA-ccQhkqP3eAoDthxYyOM9vSPB
 
 // 1) Given a partially filled in Sudoku board and a set of coordinates in that board pointing to an empty square, write a function that returns a list containing all numbers that the empty square could be.
 
+func getValidNumbersCameron(sudokuBoard:[[Int?]], row:Int, col:Int) -> [Int] {
+    var valid: Set<Int> = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    
+    for c in 0..<sudokuBoard[row].count {
+        if c == col {
+            continue
+        }
+        if let value = sudokuBoard[row][c] {
+            valid.remove(value)
+        }
+    }
+    
+    for r in 0..<sudokuBoard.count {
+        if r == row {
+            continue
+        }
+        if let value = sudokuBoard[r][col] {
+            valid.remove(value)
+        }
+    }
+    let sqRow = row / 3
+    let sqCol = col / 3
+    
+    for r in sqRow..<(sqRow + 3) {
+        for c in sqCol..<(sqCol + 3) {
+            if r == row && c == col {
+                continue
+            }
+            if let value = sudokuBoard [r][c] {
+                valid.remove(value)
+            }
+        }
+    }
+    // Turn the set to into an Array
+    return Array<Int>(valid)
+}
+
+
+
+
 
 func getAllColArrayIndexRefactored(paramCol: Int, board: [[Int]]) -> [String: [Int]] {
     // grab all the index Array that are associated with col
@@ -127,8 +167,9 @@ func getAllRowArrayIndex(paramRow: Int) -> [String: [Int]] {
 
 func getValidNumbers(sudokuBoard: [[Int]], row: Int, col: Int) -> Set<Int>{
     let colDictionary = getAllColArrayIndexRefactored(col, board: sudokuBoard)
-//    let colDictionary = getAllColArrayIndex(col)
 //    let rowDictionary = getAllRowArrayIndexRefactored(row, board: sudokuBoard)
+//    let colDictionary = getAllColArrayIndex(col)
+
     let rowDictionary = getAllRowArrayIndex(row)
     
     var colValue = [Int]()
@@ -160,8 +201,19 @@ let sampleInput =   [[5,0,8,9,0,0,0,0,0],
                     [1,9,0,2,0,3,0,8,7],
                     [3,0,6,0,0,7,1,9,0],
                     [0,0,0,0,0,9,3,0,4]]
-getValidNumbers(sampleInput, row: 4, col: 4)
 
+let sampleInputCameron: [[Int?]] =   [[5,0,8,9,0,0,0,0,0],
+    [0,7,3,6,0,0,9,0,8],
+    [1,9,0,4,0,8,0,3,5],
+    [0,7,0,0,0,2,0,1,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,6,0,9,0,0,0,8,0],
+    [1,9,0,2,0,3,0,8,7],
+    [3,0,6,0,0,7,1,9,0],
+    [0,0,0,0,0,9,3,0,4]]
+
+getValidNumbers(sampleInput, row: 4, col: 4)
+getValidNumbersCameron(sampleInputCameron, row: 4, col: 4)
 
 
 // 2) rotate a matrix by ninety degrees
@@ -190,6 +242,7 @@ func rotateMatrixNinetyDegree(matrix: [[Int]]) -> [[Int]] {
     
     return rotatedMatrix
 }
+
 let matrix = [[1,2,3,4],
             [5,6,7,8],
             [9,0,1,2],
@@ -197,8 +250,40 @@ let matrix = [[1,2,3,4],
 rotateMatrixNinetyDegree(matrix)
 
 
+
+
 // 3) Design an optimal algorithm for sorting four elements A, B, C, and D. By optimal, I mean one that sorts using the minimum number of comparisons. Hint: you may want to start by putting the first two items in order and the last two items in order... that takes two comparisons. How many more comparisons do you need to find the minimum element? The maximum? Once you’ve found the min and max, what if any additional comparisons are needed?
 
 
 // Once the the first two and the last two are in order then compare the C element with the B element. If C element is greater than B element then all four elements are in order. if not then compare C with A element, if C < A then insert C before A otherwise after A.
+
+func mySort(value: [Int]) -> [Int] {
+    var left = value[0...1]
+    if left[0] > left [1] {
+        let t = left[0]
+        left[0] = left[1]
+        left[1] = t
+    }
+    
+    var right = value[2...4]
+    if right[0] > right [1] {
+        let t = right[1]
+        right[0] = right[1]
+        right[1] = t
+    }
+    // 1 3
+    // 2 4
+    
+    return[]
+}
+
+
+
+
+
+
+
+
+
+
 
