@@ -25,8 +25,51 @@ Sample input:  ,4,4
 
 sample output: [1,3,4,5,6,8]
 */
+/*
 
-
+func getValidNumbers(sudokuBoard:[[Int?]], row:Int, col:Int)->[Int] {
+    var availableNumbersMap = Array(count: 9, repeatedValue: true)
+    // check rows
+    for i in (0..<9) {
+        if( i != row && sudokuBoard[i][col] != nil) {
+            let usedNumber = sudokuBoard[i][col]!
+            availableNumbersMap[usedNumber - 1] = false
+        }
+    }
+    
+    //check cols
+    for i in (0..<9) {
+        if( i != row && sudokuBoard[row][i] != nil) {
+            let usedNumber = sudokuBoard[row][i]!
+            availableNumbersMap[usedNumber - 1] = false
+        }
+    }
+    
+    //check 3x3 box
+    let rowMultiplier = row/3           // taking advantage of integer division
+    let rowOffset = rowMultiplier*3     // ex: 8/3 = 2
+    let colMultiplier = col/3
+    let colOffset = colMultiplier*3
+    for i in (0..<3) {
+        for j in (0..<3) {
+            if rowOffset+i != row && colOffset+j != col && sudokuBoard[rowOffset+i][colOffset+j] != nil {
+                let usedNumber = sudokuBoard[rowOffset+i][colOffset+i]!
+                availableNumbersMap[usedNumber - 1] = false
+            }
+        }
+    }
+    
+    // convert availableNumbers to an array of Ints
+    var availableNumbers = [Int]()
+    for i in (0..<availableNumbersMap.count) {
+        if availableNumbersMap[i] {                 //number is still valid
+            availableNumbers.append(i+1)
+        }
+    }
+    return availableNumbers
+}
+*/
+/* Method 1
 func getValidNumbers(sudokuBoard:[[Int?]], row:Int, col:Int) -> [Int] {
     var valid: Set<Int> = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     
@@ -80,7 +123,7 @@ func getValidNumbers(sudokuBoard:[[Int?]], row:Int, col:Int) -> [Int] {
     
     getValidNumbers(sampleInput, row: 0, col: 1)
     
-    
+  */
     
     //Method 1
     // loop through the row, the column and the box, create a set.
@@ -129,6 +172,31 @@ Sample Output: [ [3,9,5,1],
 
 */
 
+// O(N*M) space
+// Extra: think of a way to do the rotation inplace
+// meaning don't use any extra arrays.
+func rotateMatrix(mat:[[Int]]) -> [[Int]] {
+    let newRowCount = mat[0].count // new number of rows will be the same as
+    let newColCount = mat.count    // the old number of cols. vice versa for cols
+    var newMat = Array(count: newRowCount, repeatedValue: Array(count: newColCount, repeatedValue: 0))
+    for i in (0..<mat.count) {
+        for j in (0..<mat[0].count) {
+            newMat[j][newColCount - 1 - i] = mat[i][j]
+        }
+    }
+    return newMat
+}
+
+let rotateInput = [[1,2,3,4],
+    [5,6,7,8],
+    [9,0,1,2],
+    [3,4,5,6]]
+
+rotateMatrix(rotateInput)
+
+
+/* method 1
+
 func rotate90(matrix: [[Int]]) -> [[Int]] {
     let n = matrix.count
     
@@ -156,6 +224,8 @@ let rotateInput = [[1,2,3,4],
 [3,4,5,6]]
 
 rotate90(rotateInput)
+
+*/
 
     // n * n matrix
     
