@@ -9,7 +9,7 @@ var str = "Hello, playground"
 
 Work on your solutions here.
 
-Link: https://docs.google.com/document/d/1XioaEqk6VqUPA-ccQhkqP3eAoDthxYyOM9vSPB7fDkg/edit#heading=h.uopysoy45zmw
+Link: https://docs.google.com/document/d/1INvOynuggw69yLRNg3y-TPwBiYb3lQZQiFUOxZKBwsY/edit#heading=h.za36ai6n5fth
 
 1) 
 
@@ -224,7 +224,5 @@ return sorted
 sort([3,1,4,0]) -> [0,1,3,4]
 sort([2,2,2,2]) -> [2,2,2,2]
 sort([1,6,0,2]) -> [0,1,2,6]
-
-
 
 */
