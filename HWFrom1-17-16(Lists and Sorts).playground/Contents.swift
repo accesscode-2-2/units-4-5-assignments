@@ -160,11 +160,12 @@ func matrixRotate() {
         [0, 0, 0, 0],
         [0, 0, 0, 0],
         [0, 0, 0, 0]]
-    
+    var num = matrix.count
     var count = 0
     repeat {
+        
         for i in 0..<matrix.count {
-            new90RotatedMatrix[count].insert(matrix[3 - i][count], atIndex: i)
+            new90RotatedMatrix[count].insert(matrix[(num - 1) - i][count], atIndex: i)
         }
         count++
     } while count < matrix.count
@@ -181,6 +182,9 @@ func matrixRotate() {
 
 matrixRotate()
 
+
+
+// #3 Reorder the letters
 
 var letters = ["D", "C", "O", "G"]
 
@@ -267,7 +271,3 @@ for i in 0..<letters.count {
 
 print(letters)
 
-
-
-print("final min \(finalMin)")
-print("final max \(finalMax)")
