@@ -99,6 +99,7 @@ func verticalCheckSudoku(row: Int, column: Int, arr: Set<Int>) -> Set<Int> {
     return notPossibleOutcomes
 }
 
+<<<<<<< HEAD
 // horizontal check
 func horizontalCheckSudoku(row: Int, column: Int, arr: Set<Int>) -> Set<Int> {
     var notPossibleOutcomes: Set<Int> = []
@@ -111,6 +112,9 @@ func horizontalCheckSudoku(row: Int, column: Int, arr: Set<Int>) -> Set<Int> {
     
     return notPossibleOutcomes
 }
+=======
+Link: https://docs.google.com/document/d/1INvOynuggw69yLRNg3y-TPwBiYb3lQZQiFUOxZKBwsY/edit#heading=h.za36ai6n5fth
+>>>>>>> df0dff8f1511200af5eae06e949d0d5f90c95b74
 
 // get user input and return the possible # for that empty space
 func getCoordinatesAndReturnPossibleMoves() -> Set<Int> {
@@ -271,3 +275,7 @@ for i in 0..<letters.count {
 
 print(letters)
 
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> df0dff8f1511200af5eae06e949d0d5f90c95b74
