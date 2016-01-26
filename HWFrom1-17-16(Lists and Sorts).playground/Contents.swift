@@ -127,6 +127,26 @@ print(rotateMatrix([
 
 // 3)
 
+func mySort(values: [Int]) -> [Int] {
+    
+    
+    var left = values[0...1]
+    if left[0] > left[1] {
+        let t = left[0]
+        left[0] = left[1]
+        left[1] = t
+    }
+    var right = values[2...4]
+    if right[0] > right[1] {
+        let t = right[0]
+        right[0] = right[1]
+        right[1] = t
+    }
+    
+    
+    
+}
+
 // split ABCD into two groups, AB and CD and compare those which will be fewer steps than checking all of them, then merge the two groups
 
 
