@@ -9,10 +9,8 @@ var str = "Hello, playground"
 
 Work on your solutions here.
 
-
-
-
 Link: https://docs.google.com/document/d/1XioaEqk6VqUPA-ccQhkqP3eAoDthxYyOM9vSPB7fDkg/edit#heading=h.uopysoy45zmw
+
 
 1) Given a partially filled in Sudoku board and a set of coordinates in that board pointing to an empty square, write a function that returns a list containing all numbers that the empty square could be
 
@@ -280,4 +278,3 @@ func sortFourStrings(inout arr:[String]) ->[String]
 sortFourStrings(&fourStringArr)
 sortFourStrings(&anotherFourStringArr)
 sortFourStrings(&mArr)
-
