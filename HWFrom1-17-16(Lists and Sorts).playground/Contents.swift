@@ -9,7 +9,7 @@ var str = "Hello, playground"
 
 Work on your solutions here.
 
-Link: https://docs.google.com/document/d/1XioaEqk6VqUPA-ccQhkqP3eAoDthxYyOM9vSPB7fDkg/edit#heading=h.uopysoy45zmw
+Link: https://docs.google.com/document/d/1INvOynuggw69yLRNg3y-TPwBiYb3lQZQiFUOxZKBwsY/edit#heading=h.za36ai6n5fth
 
 1) Given a partially filled in Sudoku board and a set of coordinates in that board pointing to an empty square, write a function that returns a list containing all numbers that the empty square could be.
 
@@ -259,6 +259,7 @@ rotate90(rotateInput)
 
 
 
+<<<<<<< HEAD
 func mySort(values: [Int]) -> [Int] {
     var left = values[0...1]
     if left[0] > left[1] {
@@ -282,3 +283,6 @@ func mySort(values: [Int]) -> [Int] {
 //find the minCD and maxCD for C and D
 //compare minAB and minCD to get min, compare maxAB and maxCD to get max
 //
+=======
+*/
+>>>>>>> df0dff8f1511200af5eae06e949d0d5f90c95b74
