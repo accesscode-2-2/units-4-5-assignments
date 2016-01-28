@@ -1,6 +1,6 @@
 ////: Playground - noun: a place where people can play
 //
-//import Cocoa
+import Cocoa
 //
 ////1.
 var str = "Hello, playground"
@@ -42,14 +42,34 @@ func fib(n: Int) -> Int {
 print(fib(13))
 
 //2.
-//var stepNum = 0
-//func tryStep() -> Int {
-//    let stepCount = Int(arc4random_uniform(3)) - 1
-//    stepNum += stepCount;
-//    switch(stepCount) {
-//    case -1: print("Ouch \(stepNum)")
-//    case 1: print("Yay  \(stepNum)")
-//    default: print("Beep \(stepNum)")
-//    }
-//    return stepCount
-//}
+var stepNum = 0
+func tryStep() -> Int {
+    let stepCount = Int(arc4random_uniform(3)) - 1
+    stepNum += stepCount;
+    switch(stepCount) {
+    case -1: print("Ouch \(stepNum)")
+    case 1: print("Yay  \(stepNum)")
+    default: print("Beep \(stepNum)")
+    }
+    return stepCount
+}
+
+func stepUp(_: Int) -> Int {
+    let steps = 0
+    if stepNum > 0 {
+        stepNum += steps
+        print("yay, made it up a stair")
+    } else if stepNum == 0 {
+        stepNum == 0
+        print("try again")
+        tryStep()
+    } else {
+        stepNum -= steps
+        print("gotta make up that step")
+        tryStep()
+        tryStep()
+    }
+    return stepNum
+}
+
+print(stepUp(7))
