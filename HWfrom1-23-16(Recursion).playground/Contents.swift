@@ -60,11 +60,11 @@ func binarySearch(var array:[Int], number:Int) -> Bool{
     }
     if number < midIndex {
         array[0..<midIndex]
-         binarySearch(array, number: number)
+//         binarySearch(array, number: number)
     }
     if number > midIndex {
         array[midIndex...array.count]
-        binarySearch(array, number: number)
+//        binarySearch(array, number: number)
     }
     return false
 }
