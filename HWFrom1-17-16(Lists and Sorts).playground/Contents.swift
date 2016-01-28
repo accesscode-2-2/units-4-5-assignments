@@ -32,7 +32,7 @@ return false;  // no valid choice found, trigger backtracking
 
 
 
-2) func rotateNinety (arr: [Int]) -> [Int] {
+2) func rotateNinety (arr: [[Int]]) -> [[Int]] {
 
     for i in 0..<arr.count {
         for j in 0..<arr.count {
@@ -51,11 +51,16 @@ var rotatedArr = [Int]()
 print(rotateNinety(arr))
 
 
+*******************************
 
 
 
+for (r, row) in matrix.enumerate()
+//(index, value)
 
-3)
+
+3) ///use merge sort?
+
 //var midpoint = fourElements/2
 
  var fourElements = [A,B,C,D]
@@ -107,6 +112,26 @@ func findMinAndMax(fourElements) -> Int {
 }
 
 */
+
+
+
+
+
+
+
+
+//Simplest implementation of recursion
+func fib(n: Int) -> Int {
+    if n < 2 {
+        return 1
+    }
+    let a = n - 2
+    let b = n - 1
+    return fib(a) + fib(b)
+}
+
+let values = (0..<10).map {i in fib(i)}
+values
 
 
 
