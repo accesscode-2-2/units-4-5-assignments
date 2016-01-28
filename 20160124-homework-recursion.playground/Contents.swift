@@ -101,23 +101,6 @@ steppUp()
 
 
 
-//func stepUp2(steppNum: Int) {
-//    switch steppNum {
-//    case -1, 0:
-//        tryStepp() + tryStepp()
-//    case 1:
-//        print("hooray!!!")
-//    default:
-//        tryStepp() + tryStepp()
-//    }
-//}
-//stepUp2(steppNum)
-
-
-
-
-
-
 
 
 
