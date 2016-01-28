@@ -33,7 +33,6 @@ func fibIterative(n: Int) -> Int
     for i in 1...n-1 {
     
         tempSum = fibNumArr[i] + fibNumArr[i-1]
-        //print(tempSum)
         fibNumArr.append(tempSum)
     }
     
@@ -158,7 +157,7 @@ otherwise it should return the full path to that file.
 //            
 //            if fileOrDir == name {
 //                
-//                return ("Found file: " + name + "At Path: " + fullPath)
+//                return ("Found file: " + name + " At Path: " + fullPath)
 //                
 //            }else {
 //                
