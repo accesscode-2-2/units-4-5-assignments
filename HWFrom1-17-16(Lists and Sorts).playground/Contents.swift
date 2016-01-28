@@ -9,7 +9,7 @@ var str = "Hello, playground"
 
 Work on your solutions here.
 
-Link: https://docs.google.com/document/d/1XioaEqk6VqUPA-ccQhkqP3eAoDthxYyOM9vSPB7fDkg/edit#heading=h.uopysoy45zmw
+Link: https://docs.google.com/document/d/1INvOynuggw69yLRNg3y-TPwBiYb3lQZQiFUOxZKBwsY/edit#heading=h.za36ai6n5fth
 
 1) Input: sudokuBoard:[[Int?]]. (Each location on the board will be either be an Int from 1-9 or nil(empty cell))
 row: Int
@@ -88,6 +88,7 @@ valid.remove(value)
 }
 }
 
+<<<<<<< HEAD
 // Turn the set into an array
 return Array<Int>(valid)
 }
@@ -172,4 +173,6 @@ right[1] = t
 
 return []
 
+=======
+>>>>>>> e4827c92554b75e4dccf0e98751ea7fef5cbde66
 */
