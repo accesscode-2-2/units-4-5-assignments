@@ -134,3 +134,44 @@ Your method should return “NOT FOUND” if it couldn’t find the file,
 otherwise it should return the full path to that file.
 */
 
+//func findFile(name: String, atPath: String) -> String {
+//    let fileManager = NSFileManager.defaultManager()
+//    let contents =
+//    try! fileManager.contentsOfDirectoryAtPath(atPath)
+//    for fileOrDir in contents {
+//        var isDir = ObjCBool(false);
+//        let fullPath = atPath + "/" + fileOrDir
+//        let exists = fileManager.fileExistsAtPath(fullPath, isDirectory: &isDir)
+//        if exists && Bool(isDir) {
+//            
+//            print("DIR: " + fileOrDir + "Path: " + fullPath)
+//            
+//            let found = findFile(name, atPath: fullPath)
+//            
+//            if found != "NOT FOUND" {
+//                
+//                return found
+//            }
+//            
+//            
+//        } else if exists {
+//            
+//            if fileOrDir == name {
+//                
+//                return ("Found file: " + name + "At Path: " + fullPath)
+//                
+//            }else {
+//                
+//                print("FILE: " + fileOrDir)
+//                
+//            }
+//            
+//        } else {
+//            print("NEITHER: " + fileOrDir)
+//            
+//        }
+//    }
+//    return "NOT FOUND"
+//}
+//
+//print(findFile("PriceList.docx", atPath: "/Users/justinegartner/Documents"))
