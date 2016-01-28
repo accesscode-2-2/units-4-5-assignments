@@ -11,15 +11,60 @@ Homework link: https://docs.google.com/document/d/1INvOynuggw69yLRNg3y-TPwBiYb3l
 
 //Question 1
 
+/*
 
+fibonacciIterative(let n: Int)
+{
+    int i = 0, j = 1, k, t;
+    for (k = 1; k <= n; ++k)
+    {
+        t = i + j;
+        i = j;
+        j = t;
+    }
+    return j;
+}
 
-
-
+/*
 
 //Question 2
 
-
-
-
+var stepNum = 0
+func tryStep() -> Int {
+let stepCount = Int(arc4random_uniform(3)) - 1
+stepNum += stepCount;
+switch(stepCount) {
+case -1: print("Ouch \(stepNum)")
+case 1: print("Yay  \(stepNum)")
+default: print("Beep \(stepNum)")
+}
+return stepCount
+}
 
 //Question 3
+
+func findFile(name: String, atPath: String) -> String {
+let fileManager = NSFileManager.defaultManager()
+let contents =
+try! fileManager.contentsOfDirectoryAtPath(atPath)
+for fileOrDir in contents {
+var isDir = ObjCBool(false);
+let fullPath = atPath + "/" + fileOrDir
+let exists = fileManager.fileExistsAtPath(fullPath, isDirectory: &isDir)
+if exists && Bool(isDir) {
+// YOUR CODE HERE
+print("DIR: " + fileOrDir)
+} else if exists {
+// YOUR CODE HERE
+print("FILE: " + fileOrDir)
+} else {
+print("NEITHER: " + fileOrDir)
+}
+}
+return "NOT FOUND"
+}
+
+print(findFile("awesome-idea.txt", atPath: "/Users/calebegg/Documents"))
+
+/*
+*/*/*/
