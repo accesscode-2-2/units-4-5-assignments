@@ -22,7 +22,7 @@ func getValidNumbers(sudokuBoard:[[Int]], row:Int, col:Int)->[Int]{
     for row in 0...8{
         if (row != 0){
         var x = row
-        value = [x][col]
+        value = sudokuBoard[x][col]
         x++
         arrayNums.append(value)
         }
@@ -30,7 +30,7 @@ func getValidNumbers(sudokuBoard:[[Int]], row:Int, col:Int)->[Int]{
     for col in 0...8{
         if (col != 0){
         var y = col
-        value = [row][y]
+        value = sudokuBoard[row][y]
         y++
         arrayNums.append(value)
         }
