@@ -100,15 +100,16 @@ func getValidNumbers(sudokuBoard:[[Int]], row: Int, col: Int) -> [Int] {
     return numbersAvailable
 }
 
-getValidNumbers(sudokuBoard, row: 1, col: 4)
+getValidNumbers(sudokuBoard, row: 4, col: 4)
 
 
 // 2)
 let array = [
-    [1,2,3,4],
-    [5,6,7,8],
-    [9,0,1,2],
-    [3,4,5,6]]
+    [1,2,3,4,5],
+    [5,6,7,8,9],
+    [9,0,1,2,16],
+    [3,4,5,6,20],
+    [5,19,29,102,2]]
 
 func rotateArray90Degrees(arrayToRotate: [[Int]]) -> [[Int]] {
     var newArray = arrayToRotate
@@ -142,7 +143,7 @@ etc.
 
 // 3)
 
-var unSortedArray = [1, 5, 2, 6]
+var unSortedArray = [11, 50, 20, 1]
 
 func sortArray(inout arr: [Int]) -> [Int] {
     var temp: Int
