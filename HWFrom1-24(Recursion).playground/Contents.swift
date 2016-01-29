@@ -24,7 +24,7 @@ func fib(firstNumber: Int, secondNumber: Int, n: Int) -> Int {
     return nth
 }
 
-print(fib(1, secondNumber: 1, n: 5))
+//print(fib(1, secondNumber: 1, n: 5))
 
 
 //Question 2

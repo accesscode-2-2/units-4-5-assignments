@@ -19,9 +19,15 @@ func findFile(name: String, atPath: String) -> String {
         if exists && Bool(isDir) {
             // YOUR CODE HERE
             print("DIR: " + fileOrDir)
+            let result = findFile(name, atPath: fullPath)
+            if result != "NOT FOUND" {
+                return result
+            }
         } else if exists {
             // YOUR CODE HERE
-            print("FILE: " + fileOrDir)
+                if fileOrDir == name {
+                    return "FOUND" + "FILE: " + fullPath
+                }
         } else {
             print("NEITHER: " + fileOrDir)
         }
@@ -29,4 +35,4 @@ func findFile(name: String, atPath: String) -> String {
     return "NOT FOUND"
 }
 
-print(findFile("awesome-idea.txt", atPath: "/Users/calebegg/Documents"))
+print(findFile("20160112JasonWang.pdf", atPath: "/Users/jasonwang/Documents"))
