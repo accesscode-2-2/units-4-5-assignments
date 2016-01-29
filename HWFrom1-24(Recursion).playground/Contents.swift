@@ -122,6 +122,24 @@ func stepUp(var stepCounter: Int = 0) {
 
 stepUp()
 
+func stepUpUp() {
+    
+    switch tryStep() {
+        
+    case 1:
+        return
+        
+    case -1:
+        stepUpUp()
+        stepUpUp()
+    
+    default:
+        stepUpUp()
+    }
+}
+
+stepUpUp()
+
 
 /*
 ***********Question 3
