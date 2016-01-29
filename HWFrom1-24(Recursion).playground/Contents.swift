@@ -1,10 +1,6 @@
-//: Playground - noun: a place where people can play
 
-import UIKit
-var str = "Hello, playground"
 
-//Work on your solutions here.
-
+//Question 1
 //Link: https://docs.google.com/document/d/1INvOynuggw69yLRNg3y-TPwBiYb3lQZQiFUOxZKBwsY/edit#heading=h.za36ai6n5fth
 
 //1) Write an iterative (not recursive) fibonacci function that calculates the nth fibonacci number. How does its performance compare with the non-memoized recursive one (see Appendix A below), based on the number of iterations that Swift says it takes in the right margin?
@@ -21,12 +17,21 @@ func fib(n: Int) -> Int {
 //iterative - W/ Loops
 
 func fibIt(n:Int) -> Int{
-    for fib in 1..<n{
-        let sum = (n-1)+(n-2)
+    for _ in 1..<n{
+        var sum = (n-1)+(n-2)
     }
     return sum
 }
 
-print(fibIt(4))
 
-fibIt(4)
+
+
+
+
+//Question 2
+
+
+
+
+
+//Question 3
