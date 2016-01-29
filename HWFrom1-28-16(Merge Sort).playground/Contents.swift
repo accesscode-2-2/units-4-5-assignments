@@ -29,6 +29,8 @@ array // [2, 1]
 //*******Insertion Sort*********
 
 
+//**** First Solution ****
+
 func insertionSort(inout values: [Int])
 {
     
@@ -43,9 +45,11 @@ func insertionSort(inout values: [Int])
                 
                 values.insert(lastIndex, atIndex: index)
                 print("newValues: \(values)")
+                
                 insertHelper(&values, index: 0)
                 
             }else {
+                
                 values.append(lastIndex)
                 insertHelper(&values, index: index + 1)
             }
@@ -60,3 +64,38 @@ func insertionSort(inout values: [Int])
 
 var values = [46, 45, 3, 23, 1, 9]
 insertionSort(&values)
+
+
+//***** Solution 2 - Using Swap ****
+
+func insertionSort2(inout values: [Int])
+{
+    print("*****InsertionSort2******")
+    func swapHelper(inout values: [Int], index: Int) {
+        
+        if index > 0 {
+            
+            print("last index: \(values[index])")
+            
+            if values[index] < values[index - 1] {
+                
+                swap(&values[index], &values[index - 1])
+                print("newValues: \(values)")
+                
+                swapHelper(&values, index: values.count - 1)
+                
+            }else {
+                
+                swapHelper(&values, index: index - 1)
+            }
+            
+            
+        }
+    }
+    
+    swapHelper(&values, index: values.count - 1)
+    
+}
+
+var values2 = [46, 45, 3, 23, 1, 9]
+insertionSort2(&values2)
