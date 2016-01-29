@@ -41,6 +41,21 @@ default: print("Beep \(stepNum)")
 return stepCount
 }
 
+func stepUp() {
+    switch tryStep() {
+    case 1:
+        return
+    case 0:
+        stepUp()
+    case -1:
+        stepUp()
+        stepUp()
+    default:
+        stepUp()
+    if tryStep() == 1
+
+}
+
 //Question 3
 
 func findFile(name: String, atPath: String) -> String {
@@ -53,9 +68,16 @@ let fullPath = atPath + "/" + fileOrDir
 let exists = fileManager.fileExistsAtPath(fullPath, isDirectory: &isDir)
 if exists && Bool(isDir) {
 // YOUR CODE HERE
+let result = findFile(name, atPath, fullPath)
+if result != "NOT FOUND"{
+return result
+}
 print("DIR: " + fileOrDir)
 } else if exists {
 // YOUR CODE HERE
+if fileOrDir == nmae{
+return fullPath
+}
 print("FILE: " + fileOrDir)
 } else {
 print("NEITHER: " + fileOrDir)
@@ -64,7 +86,7 @@ print("NEITHER: " + fileOrDir)
 return "NOT FOUND"
 }
 
-print(findFile("awesome-idea.txt", atPath: "/Users/calebegg/Documents"))
+print(findFile("awesome-idea.txt", atPath: "/Users/umahmud"))
 
 /*
 */*/*/
