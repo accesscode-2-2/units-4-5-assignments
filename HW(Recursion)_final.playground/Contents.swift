@@ -40,7 +40,7 @@ func fibIter(n: Int) -> Int {
     }
     return x;
 }
-fibIter(4)
+(0...5).map{ i in fibIter(i) }
 
 
 
@@ -68,13 +68,19 @@ func tryStep() -> Int {
 // HW ANSWER
 
 func stepUp() {
-    if tryStep() == 1 {
-        // We’re done!
+    
+    switch tryStep() {
+    case 1:
         return
+    case 0:
+        stepUp()
+    case -1:
+        stepUp()
+        stepUp()
+    default:
+        stepUp()
+        
     }
-    // Now we’re two steps below where we want to be :-(
-    stepUp()
-    stepUp()
 }
 
 

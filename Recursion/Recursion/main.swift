@@ -21,18 +21,18 @@ func findFile(name: String, atPath: String) -> String {
         let fullPath = atPath + "/" + fileOrDir
         let exists = fileManager.fileExistsAtPath(fullPath, isDirectory: &isDir)
         if exists && Bool(isDir) {
-
-            //print("DIR: " + fileOrDir)
-            findFile(name, atPath: fullPath)
+            
+            let result = findFile(name, atPath: fullPath)
+            if result != "NOT FOUND"{
+                return result
+            }
             
         } else if exists {
-
-            if (fileOrDir == name){
-//              print("FILE: " + fileOrDir)
-              print("File is at: \(fullPath)")
+            
+            if fileOrDir == name {
                 return fullPath
             }
-           
+            
         } else {
             print("NEITHER: " + fileOrDir)
         }
