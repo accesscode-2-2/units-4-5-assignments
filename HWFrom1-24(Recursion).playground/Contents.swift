@@ -31,8 +31,9 @@ func fibm(n: Int) -> Int {
     cache[n] = value
     return value
 }
+(0...5).map { i in fibm(i) }
+//fibm(15)
 
-fibm(15)
 
 //non-memorized fib
 func fib(n: Int) -> Int {
@@ -41,15 +42,17 @@ func fib(n: Int) -> Int {
         return 1
     }
     return fib(n - 1) + fib(n - 2)
-}
 
-fib(15)
+}
+(0...5).map { i in fib(i) }
+
+//fib(15)
 
 //interative fib
 
 func fibonacci(n: Int) -> Int {
 // Some temporary variables.
-var a = 1
+var a = 0
 var b = 1
 // Add up numbers to the desired iteration.
 for _ in 0..<n {
@@ -57,10 +60,10 @@ for _ in 0..<n {
     a = b
     b = temp + b
 }
-return a
+return b
 }
-
-fibonacci(15)
+(0...5).map { i in fibonacci(i) }
+//fibonacci(15)
 
 // Loop over values 0 through 14 inclusive.
 //for i in 0..<15 {
@@ -90,6 +93,19 @@ func tryStep() -> Int {
     }
     return stepCount
 }
+
+func stepUp() {
+    switch tryStep() {
+    case 1:
+        return
+    case -1:
+        stepUp()
+        stepUp()
+    default:
+        stepUp()
+    }
+}
+
 
 
 /*
@@ -137,10 +153,17 @@ func findFile(name: String, atPath: String) -> String {
         let exists = fileManager.fileExistsAtPath(fullPath, isDirectory: &isDir)
         if exists && Bool(isDir) {
             // YOUR CODE HERE
-            print("DIR: " + fileOrDir)
+//            print("DIR: " + fileOrDir)
+            let result = findFile(name, atPath: fullPath)
+            if result != "NOT FOUND" {
+             return result
+            }
         } else if exists {
             // YOUR CODE HERE
-            print("FILE: " + fileOrDir)
+//            print("FILE: " + fileOrDir)
+            if fileOrDir == name {
+                return fullPath
+            }
         } else {
             print("NEITHER: " + fileOrDir)
         }
@@ -148,6 +171,6 @@ func findFile(name: String, atPath: String) -> String {
     return "NOT FOUND"
 }
 
-//print(findFile("awesome-idea.txt", atPath: "/Users/calebegg/Documents"))
+//print(findFile("awesome-idea.txt", atPath: "/Users/C4Q/Documents"))
 
 
