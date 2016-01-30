@@ -17,7 +17,7 @@ func findFile(name: String, atPath: String) -> String {
         let fullPath = atPath + "/" + fileOrDir
         let exists = fileManager.fileExistsAtPath(fullPath, isDirectory: &isDir)
         if exists && Bool(isDir) {
-            // YOUR CODE HERE
+            
             print("DIR: " + fileOrDir)
         } else if exists {
             // YOUR CODE HERE
@@ -29,7 +29,12 @@ func findFile(name: String, atPath: String) -> String {
     return "NOT FOUND"
 }
 
-print(findFile("awesome-idea.txt", atPath: "/Users/charleskang/Documents"))
+print(findFile("awesome-idea.txt", atPath: "/Users/charleshyowonkang/Documents"))
+
+
+func mergeSort(left: [Int], _ right: [Int]) -> [Int] {
+    return [] // change this
+}
 
 
 
