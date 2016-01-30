@@ -1,4 +1,5 @@
 //: Playground - noun: a place where people can play
+//THIS IS AN OPTIONAL ASSIGNMENT
 
 import UIKit
 
@@ -77,3 +78,7 @@ print(binarySearch([23, 45, 2, 27], number: 2))
 
 
 
+<<<<<<< HEAD
+=======
+//3
+>>>>>>> 73de515ec342afcee5a0edcbce4663c779ecf94b
