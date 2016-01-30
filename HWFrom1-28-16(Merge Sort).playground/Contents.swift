@@ -4,3 +4,33 @@
 
 
 //Insert code here:
+
+/*
+
+import Foundation
+​
+func selectionSort var number:[Int], index:Int) -> [Int]{
+
+{
+    while (size < n || size > k);
+    
+    array= array(size,100);
+    
+    arrayComponent newArray = new array(array);
+
+}
+
+if (array[n] < array[min]) {
+
+min = i;
+
+}
+
+if(min != k) {
+
+swap(array[n], array[min]);
+
+}
+}
+
+*/
