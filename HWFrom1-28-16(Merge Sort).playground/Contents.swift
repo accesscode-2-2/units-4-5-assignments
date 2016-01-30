@@ -19,7 +19,6 @@ func recursiveLoop(inout values: [Int], index: Int){
         if minimumIndex != index {
             swap(&values[index], &values[minimumIndex])
         }
-        
         recursiveLoop(&values, index: index + 1)
     }
     
@@ -36,5 +35,5 @@ func innerRecursiveLoop(inout values: [Int], index: Int, inout minimumIndex: Int
     }
 }
 
-var array = [6, 3, 2, 10, 5]
+var array = [50, 46, 82, 19, 33, 35, 99, 2, 5, 1009]
 selectionSort(&array)
