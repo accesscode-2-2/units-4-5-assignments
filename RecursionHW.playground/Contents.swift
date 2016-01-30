@@ -3,7 +3,6 @@
 import Cocoa
 //
 ////1.
-var str = "Hello, playground"
 func fibonacci(n: Int) -> Int {
     // Some temporary variables.
     var a = 0
@@ -39,7 +38,8 @@ func fib(n: Int) -> Int {
     }
     return fib(n - 1) + fib(n - 2)
 }
-print(fib(13))
+(0...5).map { i in fib(i) }
+
 
 //2.
 var stepNum = 0
