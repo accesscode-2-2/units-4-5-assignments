@@ -1,4 +1,5 @@
 //: Playground - noun: a place where people can play
+//THIS IS AN OPTIONAL ASSIGNMENT
 
 import UIKit
 
@@ -18,6 +19,7 @@ var str = "Hello, playground"
 
 
 //3
+
 
 // Calebs Questions: https://docs.google.com/document/d/1INvOynuggw69yLRNg3y-TPwBiYb3lQZQiFUOxZKBwsY/edit#
 
@@ -101,4 +103,6 @@ func findFile(name: String, atPath: String) -> String {
     }
     return "NOT FOUND"
 }
+
+
 
