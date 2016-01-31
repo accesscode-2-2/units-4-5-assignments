@@ -3,6 +3,7 @@
 
 Homework link: https://docs.google.com/document/d/1INvOynuggw69yLRNg3y-TPwBiYb3lQZQiFUOxZKBwsY/edit#heading=h.za36ai6n5fth
 
+<<<<<<< HEAD
 */
 
 //Question 1
@@ -174,3 +175,25 @@ func findFile(name: String, atPath: String) -> String {
 //print(findFile("awesome-idea.txt", atPath: "/Users/C4Q/Documents"))
 
 
+=======
+
+
+*/
+
+
+
+//Question 1
+
+
+
+
+
+
+//Question 2
+
+
+
+
+
+//Question 3
+>>>>>>> 38eac0e09074171b6ee04fb720bb3f14855c4b0b
