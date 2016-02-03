@@ -10,10 +10,16 @@ func findFile(name: String, atPath: String) -> String {
         let exists = fileManager.fileExistsAtPath(fullPath, isDirectory: &isDir)
         if exists && Bool(isDir) {
             print("DIR: " + fileOrDir)
-            return fullPath
-        } else if exists {
+            let result = findFile(name, atPath: fullPath)
+            if result != "NOT FOUND"
+            {
+                    return result
+            }
+            } else if exists {
+            if fileOrDir == name {
+                return fullPath
+            }
             print("FILE: " + fileOrDir)
-            return fullPath
         } else {
             print("NEITHER: " + fileOrDir)
         }
@@ -22,4 +28,4 @@ func findFile(name: String, atPath: String) -> String {
 }
 
 
-print(findFile("pinkcoral.jpb", atPath: "/Users/Mima/Downloads"))
+print(findFile("gandalf.jpeg", atPath: "/Users/Mima/Downloads"))

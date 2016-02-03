@@ -1,4 +1,5 @@
 //: Playground - noun: a place where people can play
+//THIS IS AN OPTIONAL ASSIGNMENT
 
 import UIKit
 import Foundation
@@ -77,4 +78,8 @@ stepUp()
 
 //3
 
+<<<<<<< HEAD
 // See attached folder
+=======
+//3
+>>>>>>> d4613234850bfc94872eae41b84231e7e2c32ef6
