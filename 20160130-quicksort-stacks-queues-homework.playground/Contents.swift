@@ -86,6 +86,83 @@ Bad examples: ( ( ] ([)]
 func isBalanced(paren: [String]) -> Bool {
 
 }
-
 */
+
+// add first item to array
+// add second item to array
+// if second item matches first item, remove both items
+// else 
+// add third item to array
+// if third item matches second/first item, remove both items
+
+var holdingStack: [String] = []
+
+
+func keyCheck(var holdingStack: [String], i: String) {
+    
+    if (holdingStack[0] == "(" && i == ")") {
+        holdingStack.removeAtIndex(0)
+    }
+    if (holdingStack[0] == "{" && i == "}") {
+        holdingStack.removeAtIndex(0)
+    }
+    if (holdingStack[0] == "[" && i == "]") {
+        holdingStack.removeAtIndex(0)
+    } else {
+        print("holding stack: \(holdingStack)")
+        print("i: \(i)")
+    }
+}
+
+func isBalanced(var paren: [String]) -> Bool {
+
+    if paren.count % 2 != 0 {
+      return false
+    }
+        for i in paren {
+            holdingStack.insert(paren[0], atIndex: 0)
+            paren.removeFirst()
+            keyCheck(holdingStack, i: i)
+    }
+    return true
+}
+
+var brackets = ["(", ")", "{", "}", "[", "]"]
+isBalanced(brackets)
+
+
+
+
+
+
+
+// make a STACK!
+
+struct Stack<T> {
+    var items:[T]
+    
+    //push
+    mutating func push(element:T) {
+        items.append(element)
+    }
+    
+    //pop
+    mutating func pop() -> T? {
+        if items.count == 0 { return nil}
+        return items.removeLast() // remove from end
+    }
+    
+    //peek
+    func peek() -> T? {
+        return items.last
+    }
+    
+    //size
+    func size() -> Int {
+        return items.count
+    }
+}
+
+
+
 
