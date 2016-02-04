@@ -1,7 +1,7 @@
 // Exercises from: https://docs.google.com/document/d/1INvOynuggw69yLRNg3y-TPwBiYb3lQZQiFUOxZKBwsY/edit#
 
 import UIKit
-import  Foundation
+import Foundation
 
 /* 1) Write an iterative (not recursive) fibonacci function that calculates the nth fibonacci number. How does its performance compare with the non-memoized recursive one (see Appendix A below), based on the number of iterations that Swift says it takes in the right margin?
 
@@ -16,6 +16,7 @@ func fib1(n: Int) -> Int {
     return fib1(n - 1) + fib1(n - 2)
 }
 print(fib1(10))
+(0...5).map { i in fib1(i) } // create map
 
 // Answer: this non recursive method is waaay faster.
 
@@ -32,6 +33,8 @@ for number in 1...numbers { // loop through numbers 1...10
     }
 return fibNo
 }
+
+
 
 print(fib2(10)) // Note: this is actually returning the 11th fib no because the function is starting with a 0 indexed number
 
@@ -79,18 +82,30 @@ func tryStepp() -> Int {
     return stepCount
 }
 
-// My code:
-func steppUp(var stepsTaken: Int = 0) {
-    stepsTaken += tryStepp()
-    if stepsTaken == 1 {
-        // we're done!
+//// My code:
+//func steppUp(var stepsTaken: Int = 0) {
+//    stepsTaken += tryStepp()
+//    if stepsTaken == 1 {
+//        // we're done!
+//        return
+//    }
+//    steppUp(stepsTaken)
+//}
+//steppUp()
+
+// Cameron's Code:
+func stepUp() {
+    switch tryStepp() {
+    case 1:
         return
+    case -1:
+        stepUp()
+        stepUp()
+    default:
+        stepUp()
     }
-    steppUp(stepsTaken)
 }
-steppUp()
-
-
+stepUp()
 
 
 
