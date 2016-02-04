@@ -76,6 +76,23 @@ func quickSort(inout arr: [Int]) {
 var array = [22, 15, 38, 93, 95, 0, 34, 58, 72, 59]
 quickSort(&array)
 
+
+/* 4.
+Write a function to generate an array of random numbers bounded between 1..<10,000 of size 10,000.
+
+Int(arc4random_uniform(UInt32(10000)))
+*/
+
+func uniqueRandoms(numberOfRandoms: Int, minNum: Int, maxNum: UInt32) -> [Int] {
+    var uniqueNumbers = Set<Int>()
+    while uniqueNumbers.count < numberOfRandoms {
+        uniqueNumbers.insert(Int(arc4random_uniform(maxNum + 1)) + minNum)
+    }
+    return Array(uniqueNumbers)
+}
+print(uniqueRandoms(10000, minNum: 0, maxNum: 10000))
+
+
 /* 5.
 Describe the algorithmic difference between mergesort and quicksort. Where does the sorting happen? As the recursive calls are being pushed onto the stack or as they are being popped off?
 
@@ -89,11 +106,11 @@ Bad examples: ( ( ] ([)]
 
 
 */
-var arrParen = ["][“,”]”,”{“,”}”,”(“,”)"]
-
-func isBalanced(paren: [String]) -> Bool {
-   
-}
-var arr1 = ["(,),[,]"]
-isBalanced(arr1)
-isBalanced(arrParen)
+//var arrParen = ["][“,”]”,”{“,”}”,”(“,”)"]
+//
+//func isBalanced(paren: [String]) -> Bool {
+//   
+//}
+//var arr1 = ["(,),[,]"]
+//isBalanced(arr1)
+//isBalanced(arrParen)
