@@ -5,12 +5,39 @@
 
 //1)
 
-//2)
+// O(n^2), O(n^2), O(n^2), O(n log(n)), O(n log(n))
 
-//3)
+//2) It takes less memory/resources to sort in place
 
+//3) 
+/*
+quicksort(array ,low ,high) {
+if (low < high) {
+    q <- partition(array, low ,high)
+    quicksort(array ,low, high)
+    quicksort(array ,low+1, high)
+}
+}
+partition(array, low, high)
+x <- array[low]
+i <- low-1
+j <- high+1
+while (true) {
+    repeat
+    j <- j-1
+    until (array[j] <= x)
+    repeat
+    i <- i+1
+    until (array[i] >= x)
+    if (i array[j]
+    else
+    return(j)
+}
+}
+*/
 //4)
 
-//5)
+//5) Mergesort breaks array to be sorted into new arrays. Mergesort advantage is that it has better worst-case time complexity than quicksort. Mergesort takes more space.
+// Quicksort is in place sorting.
 
 //6)
