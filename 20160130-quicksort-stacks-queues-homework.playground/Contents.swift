@@ -55,14 +55,29 @@ func makeList(n: Int, max: Int) -> [Int] {
 }
 // makeList(10000, max: 10000) // call method, set length and range
 
-/*
 
+
+/*
 5) Compare the time it takes to run mergesort, quicksort, and quicksort with the median.
 https://gist.github.com/gummibeatz/8ff29bcec54d7e3ef683
+*/
 
+func profile(block:(()->())) {
+    let start = NSDate()
+    block()
+    let end = NSDate()
+    print(end.timeIntervalSinceDate(start))
+}
 
+//run your function/code inside the block below
+profile({
+    
+})
+
+/*
 6) Describe the algorithmic difference between mergesort and quicksort. Where does the sorting happen? As the recursive calls are being pushed onto the stack or as they are being popped off?
 
+with Merge sort, the sorting happens in subarrays that are sorted and merged together at the end. Quicksort happens in the main array.
 
 7) Given an array of strings containing “[“,”]”,”{“,”}”,”(“,”)”. Output whether or not the parentheses are balanced.
 Good examples: () [] () ([]()[])
