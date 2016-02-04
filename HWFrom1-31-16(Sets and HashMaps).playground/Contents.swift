@@ -121,13 +121,63 @@ It needs to support importing from the old array based format
 which used an array of tuples, like:
 [(“Caleb”, “501-555-1234”), (“Mike”, “212-555-4321”), (“Jenny”, “345-867-5309”)]
 
-
+*/
 protocol PhoneBookProtocol {
-mutating func addPerson(name: String, phoneNumber: String)
-mutating func removePerson(name: String)
-mutating func importFrom(oldPhonebook: [(String, String)])
-func findPerson(name: String) -> String // Return phone #
+    
+    mutating func addPerson(name: String, phoneNumber: String)
+    mutating func removePerson(name: String)
+    mutating func importFrom(oldPhonebook: [(String, String)])
+    func findPerson(name: String) -> String // Return phone #
 }
 
 
-*/
+
+struct PhoneBook:PhoneBookProtocol, CustomStringConvertible {
+    
+    var phonebookDict = [String:String]()
+    
+    mutating func addPerson(name: String, phoneNumber: String) {
+        
+        
+        
+    }
+    
+    mutating func removePerson(name: String) {
+        
+        
+    }
+    
+    mutating func importFrom(oldPhonebook: [(String, String)]) {
+        
+        for i in 0..<oldPhonebook.count {
+            
+            let phoneNum = oldPhonebook[i].1
+            let name = oldPhonebook[i].0
+            
+            phonebookDict[phoneNum] = name
+            
+        }
+        
+    }
+    
+    func findPerson(name: String) -> String {
+        
+        
+        return name
+    }
+    
+    //Custom String Convertible
+    var description: String {
+        
+        return "{\(phonebookDict)}"
+    }
+}
+
+
+let oldPhoneBook = [("Caleb", "501-555-1234"), ("Mike", "212-555-4321"), ("Jenny", "345-867-5309")]
+
+var newPhonebook = PhoneBook()
+
+newPhonebook.importFrom(oldPhoneBook)
+
+newPhonebook.description
