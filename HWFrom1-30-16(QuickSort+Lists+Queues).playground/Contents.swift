@@ -124,7 +124,7 @@ func generateArray(size: Int, valueUpperBound: Int) -> [Int] {
     return array
 }
 
-var randomLongArray = generateArray(10, valueUpperBound: 10000)
+var randomLongArray = generateArray(10000, valueUpperBound: 10000)
 var quickShortArray = [22, 59, 38, 93, 95, 0, 34, 58, 72, 15]
 quickSort(&randomLongArray, first: 0, last: randomLongArray.count - 1)
 print(randomLongArray)
@@ -137,10 +137,134 @@ space complexity by breaking the array down into many other smaller arrays. */
 
 /* 6) Do this on paper first [easier to visualize] */
 
-//func isBalanced(array: [String]) -> Bool {
-//    
-//    for i in 0..<array.count {
-//        
-//        
-//    }
-//}
+/* STAAAAAAACKS */
+// This seems like a stack problem to me, so I'll use this implementation
+struct Stack<T> {
+    
+    var items: [T]
+    
+    init() {
+        items = [T]()
+    }
+
+    // push
+    mutating func push(element: T) {
+        
+        items.append(element)
+    }
+    // pop
+    mutating func pop() -> T? {
+        
+        if items.count > 0 {
+            
+            return items.removeLast()
+        }
+        return nil
+    }
+    // peek
+    func peek() -> T? {
+        
+        return items.last
+    }
+    // size
+    func size() -> Int {
+        
+        return items.count
+    }
+}
+
+// this struct helps me (and the computer) conceptualize what the two characteristics are
+// that must match up in order for bracket pairs to be considered valid
+struct Bracket {
+    
+    var orientation: String
+    var name: String
+    
+    init(symbol: String) {
+        
+        switch symbol {
+        case "(":
+            orientation = "open"
+            name = "parenthesis"
+        case ")":
+            orientation = "close"
+            name = "parenthesis"
+        case "[":
+            orientation = "open"
+            name = "bracket"
+        case "]":
+            orientation = "close"
+            name = "bracket"
+        case "{":
+            orientation = "open"
+            name = "brace"
+        case "}":
+            orientation = "close"
+            name = "brace"
+        default:
+            orientation = "invalid"
+            name = "invalid"
+        }
+    }
+}
+
+func isBalanced(array: [String]) -> Bool {
+    
+    // no way there will be matching pairs if the array count is odd. an array of 0
+    // brackets is considered balanced in this implementation, though if we wanted to
+    // we could also trim that out here
+    if array.count % 2 != 0 { return false }
+    
+    var stack = Stack<Bracket>()
+    
+    for i in 0..<array.count {
+        
+        let bracket = Bracket(symbol: array[i])
+        print(bracket)
+        
+        if i == 0 {
+            
+            // if it starts with a closing bracket we're in trouble
+            if bracket.orientation == "close" { return false }
+            
+            // otherwise, move it to the stack. we have nothing to compare
+            // with yet
+            stack.push(bracket)
+            
+        } else {
+            
+            // when we get a close bracket and the type does not match the 
+            // last bracket put on the stack, we're in trouble
+            if bracket.orientation == "close" &&
+            bracket.name != stack.peek()?.name {
+                
+                return false
+                
+            // but if we get a close bracket and it matches the type of the
+            // last bracket on the stack, we pop the last one from the stack. we 
+            // have a match
+            } else if bracket.orientation == "close" &&
+                bracket.name == stack.peek()?.name {
+                    
+                stack.pop()
+            
+            // otherwise it's another opening bracket that needs to be put on the stack
+            } else {
+                
+                stack.push(bracket)
+            }
+        }
+    }
+    
+    // only way the array is balanced is if at the end we have an empty stack
+    if stack.items.count == 0 { return true }
+    
+    // otherwise the default result is false
+    return false
+}
+
+print(isBalanced(["(", ")", "[", "]", "(", ")", "(", "[", "]", "(", ")", "[", "]", ")"]))
+print(isBalanced(["(", "(", "]", "(", "[", ")", "]"]))
+print(isBalanced(["]", "(", "]", "(", "[", ")", "]"]))
+print(isBalanced(["(", ")", ")", ")", "(", ")", "(", "[", "]", "(", ")", "[", "]", ")"]))
+print(isBalanced(["[", "(", "[", "(", "[", "[", "["]))
