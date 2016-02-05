@@ -41,8 +41,8 @@ Make your method case insensitive; it should block the word no matter what combi
 
 var blacklist = Set<String>()
 
-for word in ["crapple", "fandroids", "m$"] {
-    blacklist.insert(word)
+for word in ["crApple", "FANDROIDS", "M$"] {
+    blacklist.insert(word.lowercaseString)
 }
 
 blacklist
@@ -57,15 +57,13 @@ let msg2b = "I wish all these fandroids would just shut up!"
 func moderate(message: String) -> Bool
 {
     
-    var msgArr = [String]()
+    var msgSet = Set<String>()
     
     for word in message.componentsSeparatedByString(" ") {
         
-        msgArr.append(word.lowercaseString)
+        msgSet.insert(word.lowercaseString)
         
     }
-    
-    let msgSet = Set(msgArr)
     
     return msgSet.isDisjointWith(blacklist)
 }
