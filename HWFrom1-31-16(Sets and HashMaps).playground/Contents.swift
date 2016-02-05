@@ -125,7 +125,7 @@ protocol PhoneBookProtocol {
     mutating func addPerson(name: String, phoneNumber: String)
     mutating func removePerson(name: String)
     mutating func importFrom(oldPhonebook: [(String, String)])
-    func findPerson(name: String) -> String // Return phone #
+    func findPerson(name: String) -> String? // Return phone #
 }
 
 
@@ -136,13 +136,13 @@ struct PhoneBook:PhoneBookProtocol, CustomStringConvertible {
     
     mutating func addPerson(name: String, phoneNumber: String) {
         
-        
+        phonebookDict[phoneNumber] = name
         
     }
     
     mutating func removePerson(name: String) {
         
-        
+        phonebookDict.removeValueForKey(name)
     }
     
     mutating func importFrom(oldPhonebook: [(String, String)]) {
@@ -152,16 +152,23 @@ struct PhoneBook:PhoneBookProtocol, CustomStringConvertible {
             let phoneNum = oldPhonebook[i].1
             let name = oldPhonebook[i].0
             
-            phonebookDict[phoneNum] = name
+            phonebookDict[name] = phoneNum
             
         }
         
     }
     
-    func findPerson(name: String) -> String {
+    //An awesome alternative :)
+//    func importFrom(oldPhonebook: [(String, String)]) {
+//        for entry in oldPhonebook {
+//            addPerson(entry.0, phoneNumber: entry.1)
+//        }
+//    }
+    
+    func findPerson(name: String) -> String? {
         
         
-        return name
+        return phonebookDict[name]
     }
     
     //Custom String Convertible
