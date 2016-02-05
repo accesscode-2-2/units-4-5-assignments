@@ -26,10 +26,28 @@ moderate("Can’t we all just get along?") // true (approve)
 Write moderate(message: String) -> Bool, using a built-in Swift Set to manage your blacklist. Make your method case insensitive; it should block the word no matter what combination of upper and lowercase letters is used.
 
 
+let blacklist: Set<String> = ["crapple", "fandroid", "m$"]
+
+func moderate(message: String) -> Bool {
+    let words = message.componentsSeparatedByString(" ")
+    for word in words {
+        if blacklist.contains(word.lowercaseString) {
+            return false
+        }
+    }
+    return true
+}
+
+moderate("I would never use a crApple product!")
+moderate("something else")
+
+*/
+/*
+
 3) Your company makes a phonebook app, and your users have been complaining about how long it takes to look people’s numbers up. You decide to upgrade your archaic array-based system to a sleek, modern hash map.
 
 Write a phonebook class that uses either our HashMap from class or the built in Swift dictionary (your choice). It should implement the protocol below. It needs to support importing from the old array based format which used an array of tuples, like [(“Caleb”, “501-555-1234”), (“Mike”, “212-555-4321”), (“Jenny”, “345-867-5309”)]
-*/
+
 
 protocol PhoneBookProtocol {
     mutating func addPerson(name: String, phoneNumber: String)
@@ -82,6 +100,44 @@ let oldPhoneBook = [("Caleb", "501-555-1234"), ("Mike", "212-555-4321"), ("Jenny
 var newPhonebook = PhoneBook()
 newPhonebook.importFrom(oldPhoneBook)
 newPhonebook.description
+*/
+
+protocol PhoneBookProtocol {
+    mutating func addPerson(name: String, phoneNumber: String)
+    mutating func removePerson(name: String)
+    mutating func importFrom(oldPhonebook: [(String, String)])
+    func findPerson(name: String) -> String? // Return phone #
+}
+
+class PhoneBook: PhoneBookProtocol {
+    var storage: [String : String] = [:] // @{}
+    //var storage = Dictionary<String, String>()
+    
+    func addPerson(name: String, phoneNumber: String) {
+        storage[name] = phoneNumber
+    }
+    
+    func removePerson(name: String) {
+        storage.removeValueForKey(name)
+    }
+    
+    func findPerson(name: String) -> String? {
+        return storage[name]
+    }
+    
+    func importFrom(oldPhonebook: [(String, String)]) {
+        for entry in oldPhonebook {
+            addPerson(entry.0, phoneNumber: entry.1)
+        }
+    }
+}
+
+let oldData = [("Caleb", "501-555-1234"), ("Mike", "212-555-4321"), ("Jenny", "345-867-5309")]
+
+let phoneBook = PhoneBook()
+phoneBook.importFrom(oldData)
+phoneBook.findPerson("Jenny")
+
 
 
 
