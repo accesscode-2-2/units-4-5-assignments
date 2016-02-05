@@ -90,12 +90,31 @@ https://gist.github.com/gummibeatz/8ff29bcec54d7e3ef683
 /* 6)  Given an array of strings containing “[“,”]”,”{“,”}”,”(“,”)”. Output whether or not the parentheses are balanced.
 Good examples: () [] () ([]()[])
 Bad examples: ( ( ] ([)]
-
-func isBalanced(paren: [String]) -> Bool {
- // will finish it in a few minutes....
-}
-
 */
+
+
+    func isBalanced(paren: [String]) -> Bool {
+        if (paren.count%2 != 0) {
+            return false
+        }
+        
+        var i = 0
+        var j = paren.count
+        
+        while (i<j) {
+            let isEqual = (paren[i] == paren[j])
+            if isEqual {
+                i++
+                j--
+            }
+            return true
+        }
+
+        return false
+    }
+
+print(isBalanced(["(())"]))
+
 
 
 
