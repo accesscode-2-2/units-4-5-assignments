@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # unit-4-assignments
 Assignments for unit 4
 =======
@@ -35,3 +36,7 @@ Assignments for unit 4
 1/19/16, 7:00 pm | Have a least 2 submission on your blog.  Have a detailed README in your passion project repo that outlines the work you will be doing. | Complete this on the blog and repo you linked to on the Google Form | x
 1/19/16, 7:00 pm | Revise and resubmit your resume | Upload to the shared [Drive Folder](https://drive.google.com/drive/u/0/folders/0B61otWQVg7ApUFFjWkx6ZE9VOUU) | x
 >>>>>>> 4bfda2fa72d440ddfaead3483951409e2176a78f
+=======
+# units-4-5-assignments
+Assignments for units 4 and 5
+>>>>>>> bd758b001355c38d74c4479f385ea99f853a548d
