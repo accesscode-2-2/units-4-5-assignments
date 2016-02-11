@@ -11,7 +11,6 @@ class Node<T> {
         self.value = value
     }
 }
-
 extension Node: CustomStringConvertible {
     var description: String {
         return "\(value)"
@@ -30,32 +29,48 @@ extension Node {
         right?.printInOrder()
     }
 }
+extension Node {
+    func pop(var stack:[Node<Character>]){
+        stack.removeFirst()
+    }
+}
+extension Node {
+    func push(var stack:[Node<Character>], element:Node<Character>){
+        stack.insert(element, atIndex: 0)
+    }
+}
 
 func parseExpression(input: String) -> [Node<Character>?] {
     
     let operators: Set<Character> = ["+", "-", "*", "/"]
     var stack: [Node<Character>] = []
+    
     for character in input.characters {
 
-        let node = Node (value: character)
+    let node = Node (value: character)
         
+        if stack.isEmpty{
+            stack.first?.push(stack, element: node)
+        } else {
         if !operators.contains(character){
             stack.append(node)
         } else {
-            node.right = stack.removeLast()
-            node.left = stack.removeLast()
+            stack.first?.pop(stack)
             stack.append(node)
         }
         
+    }
     }
     stack.first?.printInOrder()
     return stack
 }
 
+
 //check
 let input = "ab+cde+**"
 
 parseExpression(input)
+
 
 
 
