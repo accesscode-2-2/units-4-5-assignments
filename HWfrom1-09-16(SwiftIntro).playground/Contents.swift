@@ -14,13 +14,38 @@ https://docs.google.com/document/d/1DQ2aCJ_yUZtazzCfb0PaS81bg61V2ZOSxpABh981xSo/
 
 //1) Given an integer N, there is a list of size N-1 that is missing one number from 1 - N(inclusive). Find that number.
 
-
+func findMissingNumber(input: Int, list: [Int]) -> Int {
+    
+    var sumArr = 0
+    var sumList = 0
+    
+    for i in 1...input {
+        
+        sumArr += i
+    }
+    
+    for i in list {
+        
+        sumList += i
+    }
+    
+    return sumArr - sumList
+    
+}
 
 //2) Given a list  of size N containing numbers 1 - N (inclusive). return true if there are duplicates, false if not
+
 func isDuplicate(numArray: [Int]) -> Bool {
+    let set = Set(numArray)
     
-    return false
+    if set.count == numArray.count {
+        return false
+    }
+    return true
 }
+    
+let arrTest = [2, 3, 4, 5, 6, 7]
+isDuplicate(arrTest)
 
 
 //3) Given two lists, find the smallest value that exists in both lists.
