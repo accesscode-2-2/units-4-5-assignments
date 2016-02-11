@@ -10,6 +10,7 @@ var str = "Hello, playground"
 
 //1
 
+let this = 5
 
 
 
