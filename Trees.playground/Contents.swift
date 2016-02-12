@@ -50,7 +50,8 @@ func parseExpression(input: String) -> Node<Character>? {
     return node;
 }
 
-parseExpression("ab+cde+**")
+var node = parseExpression("ab+cde+**")
+print(node?.postorderDescription)
 
 
 
