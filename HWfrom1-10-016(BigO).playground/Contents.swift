@@ -58,9 +58,10 @@ multiplication(7, times: 3)
 
 Time Complexity: O(n)
 
-6)
 
-7)
+6) --
+
+7) Don't get the question
 
 
 */
