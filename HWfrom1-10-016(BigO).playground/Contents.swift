@@ -26,9 +26,37 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
     b. graph
     c. hash table
 
-4)
+4)  func factorialCalc(num: Int) -> Int {
+        let range = Array(1...num)
+        var multiplier = 1
+        for (var i = 0; i < range.count; i++) {
+            multiplier *= range[i]
+        }
+    
+        return multiplier
+  }
 
-5)
+factorialCalc(5)
+factorialCalc(4)
+factorialCalc(9)
+
+Time Complexity: O(n)
+
+5)  func multiplication(num: Int, times: Int) -> Int {
+        let range = Array(1...times)
+        var total = 0
+        for (var i = 0; i < range.count; i++) {
+            total += num
+        }
+
+        return total
+    }
+
+multiplication(5, times: 2)
+multiplication(10, times: 3)
+multiplication(7, times: 3)
+
+Time Complexity: O(n)
 
 6)
 
@@ -36,20 +64,6 @@ https://docs.google.com/document/d/1aF1imJUVahCSJAuN1OEm5lQXwpSFaAmVmAETKMM6PLQ/
 
 
 */
-
-
-
-func factorialCalc(num: Int) -> Int {
-   
-    let range = 1...num
-    var multiplier = 0
-    
-    
-    
-    
-
-    return multiplier
-}
 
 
 
