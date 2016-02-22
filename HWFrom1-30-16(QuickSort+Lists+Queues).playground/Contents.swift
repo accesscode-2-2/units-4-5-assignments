@@ -35,9 +35,18 @@ while (true) {
 }
 }
 */
-//4)
+//4) func generateRandomArray (int: Int) -> [Int]{
+//   Int(arc4random_uniform(UInt32(10000)))
+//}
 
 //5) Mergesort breaks array to be sorted into new arrays. Mergesort advantage is that it has better worst-case time complexity than quicksort. Mergesort takes more space.
 // Quicksort is in place sorting.
 
-//6)
+//6)func isBalanced(paren: [String]) -> Bool {
+//       let arr1 = [string]
+//       let arr2 = []
+//       arr1.pop
+//       arr2.push
+//       if arr2 != empty
+//       arr not balanced
+//}
