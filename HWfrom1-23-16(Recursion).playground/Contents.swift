@@ -2,20 +2,5 @@
 //THIS IS AN OPTIONAL ASSIGNMENT
 
 import UIKit
+import Foundation
 
-var str = "Hello, playground"
-
-//https://docs.google.com/document/d/1KfnTOtPnBrYPFhBRAQPZBXor_mKDQvuJp4zwZbtHkRs/edit#heading=h.16sfqfmanxte
-
-
-//1
-
-
-
-
-//2
-
-
-
-
-//3
