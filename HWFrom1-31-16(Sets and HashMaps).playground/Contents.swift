@@ -2,11 +2,16 @@
 
 
 //1)
-//a)
+//a)tableSize is prime
+    //hash(n) = n
 
 
 //b)
-
+//class HashNode {
+//var firstname: String!
+//var lastname: String!
+//var next: HashNode! 
+//}
 
 //c)
 
