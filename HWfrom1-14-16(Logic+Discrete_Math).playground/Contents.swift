@@ -10,20 +10,57 @@ var str = "Hello, playground"
 Question 1: https://www.hackerrank.com/challenges/minimum-draws
 
 Copy and paste your code:
+*/
+func maxDraw (sock: Int) -> Int {
+    if sock == 1 {
+        return 2
+    } else {
+        return sock/2 + 1
+    }
+}
+/*
+What is the big O runtime of your code?: O(1)
+*/
 
-What is the big O runtime of your code?:
 
+
+
+
+/*
 Question 2: https://www.hackerrank.com/challenges/handshake
 
 Copy and paste your code:
+*/
+func totalHandshakes(people: Int) -> Int {
+    
+    return (people - 1) * (people)/2
+}
+/*
+What is the big O runtime of your code?: O(1)
+*/
 
-What is the big O runtime of your code?:
 
+
+
+/*
 Question 3: https://www.hackerrank.com/challenges/connecting-towns
 
 Copy and paste your code:
-
-What is the big O runtime of your code?:
-
 */
 
+func totalPath(towns:[Int]) -> Int {
+    if (towns.count > 0) {
+        var totalPath = 1
+        for n in towns {
+            totalPath *= n
+        }
+        return totalPath
+    } else {
+        return 0
+    }
+    
+}
+
+/*
+What is the big O runtime of your code?:
+*/
