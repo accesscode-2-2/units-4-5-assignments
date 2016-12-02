@@ -4,3 +4,36 @@
 
 
 //Insert code here:
+func selectionSort(inout values: [Int]) -> [Int] {
+    
+    recursiveLoop(&values, index: 0)
+    
+    return values
+}
+
+func recursiveLoop(inout values: [Int], index: Int){
+    if index < values.count {
+        var minimumIndex = index
+        innerRecursiveLoop(&values, index: index + 1, minimumIndex: &minimumIndex)
+        
+        if minimumIndex != index {
+            swap(&values[index], &values[minimumIndex])
+        }
+        recursiveLoop(&values, index: index + 1)
+    }
+    
+}
+
+func innerRecursiveLoop(inout values: [Int], index: Int, inout minimumIndex: Int) {
+    if index < values.count {
+        
+        if values[index] < values[minimumIndex] {
+            minimumIndex = index
+        }
+        
+        innerRecursiveLoop(&values, index: index + 1, minimumIndex: &minimumIndex)
+    }
+}
+
+var array = [50, 46, 82, 19, 33, 35, 99, 2, 5, 1009]
+selectionSort(&array)
